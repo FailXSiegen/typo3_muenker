@@ -2,7 +2,7 @@
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
-<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} {f:if(condition:'{settings.templateLayout}==2', then: ' col-md-6 col-sm-6 col-xs-12')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} {f:if(condition:'{settings.templateLayout}==2', then: ' col-md-6 col-sm-6 col-xs-12 col-12')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<!-- header -->
 	<div class="header">

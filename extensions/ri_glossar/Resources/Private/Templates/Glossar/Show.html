@@ -7,7 +7,7 @@
     <f:if condition="{glossar.images}">
         <div class="glossar-images row">
             <f:for each="{glossar.images}" as="image">
-                <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="col-md-3 col-sm-4 col-xs-6 col-6">
                     <f:if condition="{v:condition.string.contains(then: 1, else: 0, haystack: '{image.originalResource.originalFile.name}', needle: '.pdf')}">
                         <f:then>
                             {v:media.pdfThumbnail(src:'fileadmin{image.originalResource.identifier}',width:'400',treatIdAsReference:'0',alt:'',class:'img img-responsive')}
@@ -29,7 +29,7 @@
     <f:if condition="{glossar.media}">
           <div class="glossar-media row">
             <f:for each="{glossar.media}" as="media">
-                <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="col-md-3 col-sm-4 col-xs-6 col-6">
                     <a href="{media.originalResource.publicUrl}" target="_blank" class="noicon">
                         <f:if condition="{v:condition.string.contains(then: 1, else: 0, haystack: '{media.originalResource.originalFile.name}', needle: '.pdf')}">
                             <f:then>

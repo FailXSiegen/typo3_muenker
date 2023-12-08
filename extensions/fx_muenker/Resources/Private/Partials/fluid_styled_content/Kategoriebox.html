@@ -11,7 +11,7 @@
 			<div class="ce-row row">
 				<f:for each="{row.columns}" as="column">
 					<f:if condition="{column.media}">
-						<div class="ce-column col-xs-6 col-sm-{colSm}">
+						<div class="ce-column col-xs-6 col-6 col-sm-{colSm}">
                             <f:link.typolink parameter="{column.media.link}">   
                                 <span class="title">{column.media.title}</span>
                                 <f:render section="media" arguments="{_all}" />
