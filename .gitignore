@@ -54,14 +54,15 @@ build/
 /uploads
 /public/*
 !/public/typo3conf
-!/public/Kundenportal
 !/public/api
 /public/api/data.json
 /public/typo3conf/ext
 /public/typo3conf/l10n
 /public/typo3conf/LocalConfiguration.php
 /public/typo3conf/PackageStates.php
-/public/typo3conf/image_autoresize.config.php
+
+!/public/typo3conf/AdditionalConfiguration.php
+
 !/public/assets
 /blaetterkataloge
 

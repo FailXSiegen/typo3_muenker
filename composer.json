@@ -13,7 +13,7 @@
     ],
 	"config": {
 		"platform": {
-			"php": "7.4.1"
+			"php": "7.4.33"
 		},
 		"sort-packages": true,
 		"allow-plugins": {
@@ -37,6 +37,7 @@
 		"plan2net/webp": "^4.2",
 		"reelworx/rx-shariff": "^14.0",
 		"t3/dce": "^2.9",
+		"t3/min": "^2.1",
 		"in2code/powermail": "^8.4",
 		"tpwd/ke_search": "^3.9",
 		"typo3/cms-backend": "^10.0",

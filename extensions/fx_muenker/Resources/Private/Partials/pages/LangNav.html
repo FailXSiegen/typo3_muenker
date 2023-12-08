@@ -1,5 +1,5 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-
+<f:spaceless>
 <div class="dropdown languages">
     <v:page.languageMenu layout="flag,name" order="0,3,4" defaultLanguageLabel="Deutsch" hideNotTranslated="1"
         tagName="" tagNameChildren="" defaultIsoFlag="de" flagImageType="png" as="languageMenu">
@@ -7,12 +7,9 @@
             aria-haspopup="true" aria-expanded="true">
             <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
                 <f:if condition="{langmenu.current}">
-
                     <f:image
                         src="EXT:fx_muenker/Resources/Public/Images/Flags/{langmenu.flagIdentifier -> f:format.case(mode: 'upper')}.png"
-                        width="16" />
-
-                    {langmenu.label}
+                        width="16" /> {langmenu.label}
                 </f:if>
             </f:for>
             <span class="caret"></span>
@@ -21,11 +18,9 @@
             <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
                 <li class="{f:if(condition:'{langmenu.current}', then:' act', else:' inact')}">
                     <a href="{langmenu.url}">
-
                         <f:image
                             src="EXT:fx_muenker/Resources/Public/Images/Flags/{langmenu.flagIdentifier -> f:format.case(mode: 'upper')}.png"
                             width="16" />
-
                         {langmenu.label}
                     </a>
                 </li>
@@ -33,3 +28,4 @@
         </ul>
     </v:page.languageMenu>
 </div>
+</f:spaceless>
