@@ -1,0 +1,40 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" id="sidebar-nav">
+  <v:menu.directory pages="{data.uid}" entryLevel="1" expandAll="0" classActive="active" classCurrent="current"  classFirst="first" classLast="last" linkCurrent="0">
+    <ul role="menu" class="level-one" role="menu">
+      <f:for each="{menu}" as="menuPage" iteration="iteration">
+        <li itemprop="name" class="{menuPage.class} layout-{menuPage.layout}">
+          <a title="{menuPage.title}" itemprop="url" href="{menuPage.link}">{menuPage.title}</a>
+          <f:if condition="{menuPage.hasSubPages}">
+            <ul role="menu" class="level-two">
+              <v:menu.directory pages="{menuPage.uid}" as="submenu1" classActive="active" classCurrent="current"  linkCurrent="0">
+                <f:for each="{submenu1}" as="level2">
+					<li itemprop="name" class="{level2.class}layout-{level2.layout}">
+						<a itemprop="url" title="{level2.title}" href="{level2.link}">{level2.title}</a>
+						
+						<f:if condition="{level2.hasSubPages}">
+							<ul role="menu" class="level-three">
+							<v:menu.directory pages="{level2.uid}" as="submenu2" classActive="active" classCurrent="current"  linkCurrent="0">
+								<f:for each="{submenu2}" as="level3">
+									<li itemprop="name" class="{level3.class}layout-{level3.layout}">
+										<a itemprop="url" title="{level3.title}" href="{level3.link}">
+											{level3.title}
+										</a>
+									</li>
+								</f:for>
+							</v:menu.directory>
+							
+							</ul>
+						</f:if>
+						
+					</li>
+                </f:for>
+              </v:menu.directory>
+            </ul>
+          </f:if>
+        </li>
+      </f:for>
+    </ul>
+  </v:menu.directory>
+</nav>

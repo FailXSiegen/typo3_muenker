@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="cs" datatype="plaintext" original="messages" date="" product-name="fx_muenker">
+        <header/>
+        <body>
+            <trans-unit id="productinfotext">
+                <target>Všechny námi uvedené MÜC – barvy podléhají přísné výrobní kontrole. Představují nejlépe možné znázornění MÜC – klasických – barev. Na základě různých způsobů výroby, jako např. Rozdíly v lesku, mohou být viditelné menší barevné odlišnosti/odchylky. Závazné odstíny barev jsou možné až po písemném odsouhlašení vzorků. </target>
+            </trans-unit>
+            <trans-unit id="changeprofile">
+                <target>Drehe Profil</target>
+            </trans-unit>
+            <trans-unit id="negative">
+                <target>Negativní poloha</target>
+            </trans-unit>
+            <trans-unit id="positive">
+                <target>Pozitivní poloha</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

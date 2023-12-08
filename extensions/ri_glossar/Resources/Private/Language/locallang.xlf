@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-21T08:14:07Z" product-name="ri_glossar">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_riglossar_domain_model_glossar">
+				<source>Glossar</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.title">
+				<source>Title for head tags</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.h1">
+				<source>Normal Title</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.filename">
+				<source>Filename for URL rewrite</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.maintext">
+				<source>Main content</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.description">
+				<source>Description for head tags</source>
+			</trans-unit>
+            <trans-unit id="tx_riglossar_domain_model_glossar.previous">
+				<source>previous entry</source>
+			</trans-unit>
+			<trans-unit id="tx_riglossar_domain_model_glossar.next">
+				<source>next entry</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

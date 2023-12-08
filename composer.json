@@ -1,0 +1,89 @@
+{
+	"name": "failx/muenker",
+	"description" : "TYPO3 CMS Base Distribution",
+	"license": "GPL-3.0-or-later",
+	"repositories": [
+        {
+            "type": "path",
+            "url": "extensions/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+	"config": {
+		"platform": {
+			"php": "7.4.1"
+		},
+		"sort-packages": true,
+		"allow-plugins": {
+			"typo3/cms-composer-installers": true,
+			"typo3/class-alias-loader": true,
+			"helhum/dotenv-connector": true
+		}
+	},
+	"require": {
+		"failx/fx-muenker":"@dev",
+		"failx/commerce-muenker":"@dev",
+		"riconet/ri-glossar":"@dev",
+		"fluidtypo3/vhs": "^7.0",
+		"georgringer/news": "^10.0",
+		"gridelementsteam/gridelements": "^11.1",
+		"helhum/dotenv-connector": "^3",
+		"helhum/typo3-console": "^6",
+		"helhum/typoscript-rendering": "^2.4",
+		"laxap/bootstrap-grids": "^1.4",
+		"lochmueller/staticfilecache": "^12.5",
+		"plan2net/webp": "^4.2",
+		"reelworx/rx-shariff": "^14.0",
+		"t3/dce": "^2.9",
+		"in2code/powermail": "^8.4",
+		"tpwd/ke_search": "^3.9",
+		"typo3/cms-backend": "^10.0",
+		"typo3/cms-redirects": "^10.0",
+		"typo3/cms-belog": "^10.0",
+		"typo3/cms-beuser": "^10.0",
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-dashboard": "^10.0",
+		"typo3/cms-extbase": "^10.0",
+		"typo3/cms-extensionmanager": "^10.0",
+		"typo3/cms-felogin": "^10.0",
+		"typo3/cms-filelist": "^10.0",
+		"typo3/cms-filemetadata": "^10.0",
+		"typo3/cms-fluid": "^10.0",
+		"typo3/cms-fluid-styled-content": "^10.0",
+		"typo3/cms-form": "^10.0",
+		"typo3/cms-frontend": "^10.0",
+		"typo3/cms-impexp": "^10.0",
+		"typo3/cms-info": "^10.0",
+		"typo3/cms-install": "^10.0",
+		"typo3/cms-recordlist": "^10.0",
+		"typo3/cms-rte-ckeditor": "^10.0",
+		"typo3/cms-seo": "^10.0",
+		"typo3/cms-setup": "^10.0",
+		"typo3/cms-sys-note": "^10.0",
+		"typo3/cms-t3editor": "^10.0",
+		"typo3/cms-tstemplate": "^10.0",
+		"typo3/cms-viewpage": "^10.0",
+		"yoast-seo-for-typo3/yoast_seo": "^9.0"
+	},
+	"extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "public"
+        }
+    },
+	"scripts":{
+		"typo3-cms-scripts": [
+			"typo3cms install:fixfolderstructure"
+		],
+		"post-autoload-dump": [
+			"@typo3-cms-scripts"
+		]
+	},
+	"require-dev": {
+		"jigal/t3adminer": "^10.0",
+		"deployer/deployer": "^6",
+		"deployer/recipes": "^6"
+	}
+}

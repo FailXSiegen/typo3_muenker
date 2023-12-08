@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'commerce_muenker'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_commerce_products.tx_commercemuenker_description_over_image">Text über Farbauswahl</label>
+			<label index="tx_commerce_products.infotext">"i" Text</label>
+			<label index="tx_commerce_products.tx_commercemuenker_strength_title">Titel: Stärken für Stahl</label>
+			<label index="tx_commerce_products.tx_commercemuenker_strength">Stärken für Stahl</label>
+			<label index="tx_commerce_products.tx_commercemuenker_types_title">Titel: Ausführungen</label>
+			<label index="tx_commerce_products.tx_commercemuenker_types">Ausführungen</label>
+			<label index="tx_commerce_products.tx_commercemuenker_downloads_title">Titel: muenker.com - Downloads</label>
+			<label index="tx_commerce_products.tx_commercemuenker_downloads">muenker.com - Downloads</label>
+			<label index="tx_commerce_products.tx_commercemuenker_related_title">Titel: Produktübersicht</label>
+			<label index="tx_commerce_products.tx_commercemuenker_offer">Auf trapezblech-muenker.com anzeigen?</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_trapezblechmuenker">Auf trapezblech-muenker.com anzeigen?</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_form.I.0">Anfrageformular</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_form.I.1">Sonderposten</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_form.I.2">Sonderposten Preisstaffel</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_form">Anfrageformular</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_media">Zeichnung/Belastungstabelle</label>
+			<label index="tx_commerce_products.tx_commercemuenker_image_negative">Bild Negativlage</label>
+			<label index="tx_commerce_products.tx_commercemuenker_image_positive">Bild Positivlage</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_color_positive">Farbwahl Positivlage</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_color_negative">Farbwahl Negativ</label>
+			<label index="tx_commerce_articles.tx_commercemuenker_uid_ral_color">RAL Farbe</label>
+			<label index="tx_commercemuenker_color">Farbwahl</label>
+			<label index="tx_commercemuenker_color.ral_color">RAL Definition</label>
+			<label index="tx_commercemuenker_color.ral_text">RAL Name</label>
+			<label index="tx_commercemuenker_color.rgb_code">Farbwert (HEX)</label>
+		</languageKey>
+	</data>
+</T3locallang>

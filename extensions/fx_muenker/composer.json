@@ -1,0 +1,16 @@
+{
+    "name": "failx/fx-muenker",
+    "type": "typo3-cms-extension",
+    "description": "basic template extension and configs for muenker.",
+    "autoload": {
+      "psr-4": {
+        "Failx\\FxMuenker\\": "Classes/"
+      }
+    },
+    "require": {
+      "typo3/cms-core": "^10.4 || ^11.5"
+    },
+    "replace": {
+      "fx_muenker": "*"
+    }
+  }

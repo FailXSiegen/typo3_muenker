@@ -1,0 +1,73 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers} 
+{namespace fx=Failx\FxMuenker\ViewHelpers} 
+<f:layout name="Default" />
+
+<f:section name="main">
+<div class="PViewer">
+	<div class="loader" style="display: none;">Lade Profilansicht</div>
+	<div class="switcher">{f:translate(key:'LLL:EXT:fx_muenker/Resources/Private/Language/locallang.xlf:changeprofile')}</div>
+	<h1 class="title_profile">{field.title}</h1>
+	<div class="title_color_back"></div>
+	<div class="ral_info" style="display: block;"></div>
+	<div class="ral_infocontent"><f:format.nl2br>{f:translate(key:'LLL:EXT:fx_muenker/Resources/Private/Language/locallang.xlf:productinfotext')}</f:format.nl2br></div>
+		<div class="view_navi">
+			<div class="s_3d aktiv"></div><div class="s_2d"></div>
+			<br clear="all">
+			<div class="s_neg selected">{f:translate(key:'LLL:EXT:fx_muenker/Resources/Private/Language/locallang.xlf:negative')}</div>
+			<f:if condition="{field.cadpositive}">
+				<div class="s_pos">{f:translate(key:'LLL:EXT:fx_muenker/Resources/Private/Language/locallang.xlf:positive')}</div>
+			</f:if>
+		</div>
+		<div class="cad" style="display: none;">
+			<div class="negativ" style="display: block;"> 
+				<f:for each="{field.cadnegative}" as="cadnegative">
+					<f:image src="{cadnegative.publicUrl}" alt="{cadnegative.altText}" class="img img-responsive" treatIdAsReference="0" />	
+				</f:for>
+			</div>
+			<f:if condition="{field.cadpositive}">
+				<div class="positiv" style="display: none;">
+					<f:for each="{field.cadpositive}" as="cadpositive">
+						<f:image src="{cadpositive.publicUrl}" alt="{cadpositive.altText}" class="img img-responsive" treatIdAsReference="0" />	
+					</f:for>
+				</div>
+			</f:if>
+	</div>
+	<f:for each="{field.variants}" as="variant" iteration="variantcount">
+		<div id="article_{variantcount.index}" class="product_color" style="display: none;">
+			<h2 class="title_color" style="display: block;">MÜC {variant.colorcode.0.ral_color} {variant.colorcode.0.ral_text}</h2>
+			<div class="box">
+				<div class="negativ" style="display: block;">
+					<f:image src="{variant.imagenegative.0.uid}" treatIdAsReference="0" alt="{variant.name}" />
+				</div>
+				<f:if condition="{variant.imagepositive.0.uid}">
+					<div class="positiv" style="display: none;">
+						<f:image src="{variant.imagepositive.0.uid}" treatIdAsReference="0" alt="{variant.name}" />
+					</div>
+				</f:if>
+			</div>
+		</div>
+	</f:for>
+	<div class="colorwave2" style="display: block;">
+		<ul class="colors">
+			<f:for each="{field.variants}" as="variant" iteration="variantcount">
+				<li {f:if(condition:'{variant.thickness} != ""',then:'data-thickness="{variant.thickness -> f:format.nl2br() -> v:format.replace(substring:\'<br />\',replacement:\'|\')}"')}
+					style="background-color:{variant.colorcode.0.rgb_code}; padding-top: 0px; color:{fx:textColor(color:'{variant.colorcode.0.rgb_code}')}" id="article_id_{variantcount.index}">
+					{variant.colorcode.0.ral_color}
+				</li>
+			</f:for>			
+		</ul>
+	</div>
+</div>
+<f:if condition="{contentObject.sys_language_uid} == 0">
+	<div class="container anfrage-container text-center">
+		<a href="#anfrage" class="fancybox lightbox btn btn-primary">  
+			Farbauswahl unverbindlich Anfragen
+		</a>
+	</div>
+	<div class="hidden">
+		<div id="anfrage">
+			<f:cObject typoscriptObjectPath="lib.produktanfrage" />
+		</div>
+	</div>
+</f:if>
+</f:section>

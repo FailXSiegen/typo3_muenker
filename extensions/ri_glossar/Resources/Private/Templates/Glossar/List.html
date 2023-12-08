@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:for each="{glossars}" as="letter" key="key">
+        <f:link.page section="{key}">{key}</f:link.page>
+    </f:for>
+
+    <f:for each="{glossars}" as="letter" key="key">
+        <h2 id="{key}">{key}</h2>
+        <p>
+        <f:for each="{letter}" as="glossar" iteration="iterator">
+            <f:link.action action="show" arguments="{glossar : glossar}">{glossar.title}</f:link.action>{f:if(condition:'{iterator.isLast}',then:'',else:'<span class="divider">|</span>')}
+        </f:for>
+        <p>
+
+    </f:for>
+</f:section>

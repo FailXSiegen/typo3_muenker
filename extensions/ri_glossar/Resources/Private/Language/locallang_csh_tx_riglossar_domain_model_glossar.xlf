@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-21T08:14:08Z" product-name="ri_glossar">
+		<header/>
+		<body>
+
+			<trans-unit id="title.description">
+				<source>Title for head tags</source>
+			</trans-unit>
+			<trans-unit id="h1.description">
+				<source>Normal Title</source>
+			</trans-unit>
+			<trans-unit id="filename.description">
+				<source>Filename for URL rewrite</source>
+			</trans-unit>
+			<trans-unit id="maintext.description">
+				<source>Main content</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description for head tags</source>
+			</trans-unit>
+			<trans-unit id="keywords.description">
+				<source>Keywords for the head tags</source>
+			</trans-unit>
+			<trans-unit id="timestamp.description">
+				<source>timestamp</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

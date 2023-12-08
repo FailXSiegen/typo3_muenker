@@ -1,0 +1,16 @@
+{
+    "name": "riconet/ri-glossar",
+    "type": "typo3-cms-extension",
+    "description": "Basic glossar extension",
+    "autoload": {
+      "psr-4": {
+        "Riconet\\RiGlossar\\": "Classes/"
+      }
+    },
+    "require": {
+      "typo3/cms-core": "^10.4 || ^11.5"
+    },
+    "replace": {
+      "ri_glossar": "*"
+    }
+  }

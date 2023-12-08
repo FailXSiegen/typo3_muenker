@@ -1,0 +1,35 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<div class="dropdown languages">
+    <v:page.languageMenu layout="flag,name" order="0,3,4" defaultLanguageLabel="Deutsch" hideNotTranslated="1"
+        tagName="" tagNameChildren="" defaultIsoFlag="de" flagImageType="png" as="languageMenu">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
+                <f:if condition="{langmenu.current}">
+
+                    <f:image
+                        src="EXT:fx_muenker/Resources/Public/Images/Flags/{langmenu.flagIdentifier -> f:format.case(mode: 'upper')}.png"
+                        width="16" />
+
+                    {langmenu.label}
+                </f:if>
+            </f:for>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
+                <li class="{f:if(condition:'{langmenu.current}', then:' act', else:' inact')}">
+                    <a href="{langmenu.url}">
+
+                        <f:image
+                            src="EXT:fx_muenker/Resources/Public/Images/Flags/{langmenu.flagIdentifier -> f:format.case(mode: 'upper')}.png"
+                            width="16" />
+
+                        {langmenu.label}
+                    </a>
+                </li>
+            </f:for>
+        </ul>
+    </v:page.languageMenu>
+</div>

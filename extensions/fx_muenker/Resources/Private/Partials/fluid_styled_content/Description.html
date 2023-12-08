@@ -1,0 +1,48 @@
+<f:comment><f:switch expression="{data.layout}">
+  <f:case value="0">
+    <div id="c{data.uid}" class="container">
+  </f:case>
+  <f:case value="1">
+    <div id="c{data.uid}" class="container-fluid"><div class="row">
+  </f:case>
+  <f:case value="2">
+      <div id="c{data.uid}">
+  </f:case>
+  <f:case value="3">
+    <div class="container-colored"><div id="c{data.uid}" class="container">
+  </f:case>
+  <f:case value="100">
+    <div id="c{data.uid}" class="zoom">
+  </f:case>
+  <f:defaultCase>
+    <div id="c{data.uid}">
+  </f:defaultCase>
+</f:switch></f:comment>
+<div class="container">
+      <div class="description">
+        <p>{data.rowDescription}</p>
+      </div>
+</div>
+<f:comment>
+  <f:switch expression="{data.layout}">
+  <f:case value="0">
+    </div>
+  </f:case>
+  <f:case value="1">
+    </div></div>
+  </f:case>
+  <f:case value="2">
+    </div>
+  </f:case>
+  <f:case value="3">
+    </div></div>
+  </f:case>
+  <f:case value="100">
+    </div>
+  </f:case>
+  <f:defaultCase>
+    </div>
+  </f:defaultCase>
+</f:switch>
+
+</f:comment>

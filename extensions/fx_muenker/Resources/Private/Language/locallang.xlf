@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="" product-name="fx_muenker">
+        <header/>
+        <body>
+            <trans-unit id="productinfotext">
+                <source>All items marked with us MÜC colors are subject to strict controls manufacturer. They provide the best possible representation of MÜC CLASSIC colors represent. 
+                Due to different manufacturing procedures and gloss differences visually minor color deviations are state of the art and to accept. Authentic colors are possible only after written agreements pattern.</source>
+            </trans-unit>
+            <trans-unit id="changeprofile">
+                <source>Change profile</source>
+            </trans-unit>
+            <trans-unit id="negative">
+                <source>Negative</source>
+            </trans-unit>
+            <trans-unit id="positive">
+                <source>Positive</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

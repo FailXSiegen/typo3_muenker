@@ -1,0 +1,8 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="content">
+	<div class="container">
+        <f:render partial="Breadcrumb" arguments="{_all}" />
+    </div>
+	<f:format.raw>{content}</f:format.raw>
+</f:section>

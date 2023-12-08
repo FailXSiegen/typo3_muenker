@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="" product-name="fx_muenker">
+        <header/>
+        <body>
+            <trans-unit id="productinfotext">
+                <source>All items marked with us MÜC colors are subject to strict controls manufacturer. They provide the best possible representation of MÜC CLASSIC colors represent. 
+                Due to different manufacturing procedures and gloss differences visually minor color deviations are state of the art and to accept. Authentic colors are possible only after written agreements pattern.</source>
+                <target>Alle bei uns bezeichneten MÜC-Farben unterliegen strengen Herstellerkontrollen. Sie stellen die bestmögliche Darstellung der MÜC-CLASSIC-Farben dar.
+                Aufgrund unterschiedlicher Herstellungsverfahren sowie Glanzunterschieden sind visuell geringfügige Farbabweichungen Stand der Technik und hinzunehmen. Verbindliche Farben sind nur nach schriftlichen Mustervereinbarungen möglich.</target>
+            </trans-unit>
+            <trans-unit id="changeprofile">
+                <source>Change profile</source>
+                <target>Drehe Profil</target>
+            </trans-unit>
+            <trans-unit id="negative">
+                <source>Negative</source>
+                <target>Negativlage</target>
+            </trans-unit>
+            <trans-unit id="positive">
+                <source>Positive</source>
+                <target>Positivlage</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

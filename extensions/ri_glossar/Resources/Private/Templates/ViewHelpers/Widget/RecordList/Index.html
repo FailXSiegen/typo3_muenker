@@ -1,0 +1,68 @@
+<f:if condition="{databaseRecordList.HTMLcode}">
+    <f:then>
+        <f:form name="filter" method="get" class="form-inline">
+            <input type="hidden" name="M" value="{module}">
+            <input type="hidden" name="moduleToken" value="{moduleToken}">
+            <input type="hidden" name="id" value="{pid}">
+            <div class="form-group">
+                <label for="searchWord">Suche:</label>
+                <f:form.textfield property="searchWord" id="searchWord"
+                                  class="form-control"
+                                  value="{requestArguments.searchWord}"/>
+            </div>
+            <div class="form-group">
+                <label for="limit">Limit:</label>
+                <f:form.select property="limit" id="limit"
+                               class="form-control"
+                               value="{requestArguments.limit}"
+                               options="{20:'20', 50:'50', 100:'100'}" />
+            </div>
+            <f:form.submit value="{f:translate(key:'LLL:EXT:lang/locallang_common.xlf:search')}" class="btn btn-default" />
+        </f:form>
+        {databaseRecordList.HTMLcode -> f:format.raw()}
+        <script type="text/javascript">
+            var moduleUri = '{moduleUri -> f:format.raw()}';
+            T3_THIS_LOCATION = {requestUri -> f:format.raw()};
+            var delteMessage = "{f:translate(key:'LLL:EXT:lang/locallang_tsfe.xlf:p_deleteConfirm') -> f:format.raw()}";
+            // Hide / Unhide record.
+            TYPO3.jQuery('.t3js-record-hide').click(function() {
+                var self = TYPO3.jQuery(this);
+                var params = self.data('params');
+                var url = moduleUri + '&' + params +'&redirect=' + T3_THIS_LOCATION;
+                TYPO3.jQuery(location).attr('href', url);
+            });
+            console.log(delteMessage);
+            // Delete record.
+            TYPO3.jQuery('.t3js-record-delete').click(function() {
+                var self = TYPO3.jQuery(this);
+                var params = self.data('params');
+                var message = self.data('message');
+                if (confirm(delteMessage+'\n\n'+message)) {
+                    var url = moduleUri + '&' + params +'&redirect=' + T3_THIS_LOCATION;
+                    TYPO3.jQuery(location).attr('href', url);
+                }
+            });
+        </script>
+    </f:then>
+    <f:else>
+        <div class="alert alert-info">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-info fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <h4 class="alert-title"> </h4>
+                    <div class="alert-message">
+                        <f:translate key="LLL:EXT:lang/Resources/Private/Language/locallang.xlf:table.zeroRecords" arguments="{0: 'Back to the Future'}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="" onClick="window.location.href='{newRecordLink}' +T3_THIS_LOCATION; return false;" class="btn btn-default">
+            <f:translate key="LLL:EXT:lang/locallang_core.xlf:cm.createnew.link" arguments="{0: ''}" />
+        </a>
+    </f:else>
+</f:if>

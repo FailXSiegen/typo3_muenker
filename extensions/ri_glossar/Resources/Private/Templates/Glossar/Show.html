@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="Main">
+    <h1>{f:if(condition:'{glossar.h1}',then:'{glossar.h1}',else:'{glossar.title}')}</h1>
+    <f:if condition="{glossar.images}">
+        <div class="glossar-images row">
+            <f:for each="{glossar.images}" as="image">
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <f:if condition="{v:condition.string.contains(then: 1, else: 0, haystack: '{image.originalResource.originalFile.name}', needle: '.pdf')}">
+                        <f:then>
+                            {v:media.pdfThumbnail(src:'fileadmin{image.originalResource.identifier}',width:'400',treatIdAsReference:'0',alt:'',class:'img img-responsive')}
+                        </f:then>
+                        <f:else>
+                            <f:image src="{image.originalResource.uid}" treatIdAsReference="1" width="400m" alt="{image.title}" class="img img-responsive" />
+                        </f:else>
+                    
+                    </f:if>
+                    <f:if condition="{image.originalResource.description}">
+                        <f:format.nl2br>{image.originalResource.description}</f:format.nl2br>
+                    </f:if>
+                    
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+    <f:format.html>{glossar.maintext}</f:format.html>
+    <f:if condition="{glossar.media}">
+          <div class="glossar-media row">
+            <f:for each="{glossar.media}" as="media">
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="{media.originalResource.publicUrl}" target="_blank" class="noicon">
+                        <f:if condition="{v:condition.string.contains(then: 1, else: 0, haystack: '{media.originalResource.originalFile.name}', needle: '.pdf')}">
+                            <f:then>
+                                {v:media.pdfThumbnail(src:'fileadmin{media.originalResource.identifier}',width:'400',treatIdAsReference:'0',alt:'',class:'img img-responsive')}
+                            </f:then>
+                            <f:else>
+                               {media.originalResource.originalFile.name}
+                            </f:else>
+                        </f:if>
+                        <f:if condition="{media.originalResource.description}">
+                            <f:format.nl2br>{media.originalResource.description}</f:format.nl2br>
+                        </f:if>
+                     </a>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+    <f:if condition="{shownext}==1">
+        <p>
+            <f:link.action action="show" arguments="{glossar : prev}"><f:translate id="LLL:EXT:ri_glossar/Resources/Private/Language/locallang.xlf:tx_riglossar_domain_model_glossar.previous" /></f:link.action>
+            <f:link.action action="show" arguments="{glossar : next}"><f:translate id="LLL:EXT:ri_glossar/Resources/Private/Language/locallang.xlf:tx_riglossar_domain_model_glossar.next" /></f:link.action>
+        </p>
+    </f:if>
+</f:section>

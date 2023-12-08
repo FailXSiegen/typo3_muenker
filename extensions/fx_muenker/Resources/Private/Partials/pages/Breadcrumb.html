@@ -1,0 +1,71 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:if condition="{data.is_siteroot}!=1">
+
+    <ul itemscope="" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+        <f:comment>
+        {v:page.breadCrumb(tagName:"",divider:"-")}
+        </f:comment>
+        <v:page.breadCrumb showHiddenInMenu="true">
+            <f:for each="{breadcrumb}" as="level" iteration="it">
+                <f:if condition="{level.current}">
+                    <f:then>
+                            <f:if condition="{breadcrumb_glossar}">
+                            <f:then>
+                                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                    <meta itemprop="position" content="{it.cycle}">
+                                        <f:link.page additionalAttributes="{itemprop:'item',itemtype:'https://schema.org/Thing'}" title="{level.title}" pageUid="{level.uid}">
+                                            <span itemprop="name">{f:if(condition:'{level.nav_title}',then:'{level.nav_title}',else:'{level.title}')}</span>
+                                        </f:link.page>
+                                        <span class="divider">-</span>
+                                    </li>
+                            </f:then>
+                            <f:else>
+                                    <f:if condition="{breadcrumb_news}"> 
+                                    <f:then>
+                                    
+                                    </f:then>
+                                    <f:else>
+                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                        <meta itemprop="position" content="{it.cycle}">
+                                            <f:link.page additionalAttributes="{itemprop:'item',itemtype:'https://schema.org/Thing'}" title="{level.title}" pageUid="{level.uid}">
+                                            <span itemprop="name">{f:if(condition:'{level.nav_title}',then:'{level.nav_title}',else:'{level.title}')}</span>
+                                            </f:link.page>
+                                            <f:if condition="{it.isLast}">
+                                                <f:then></f:then>
+                                                <f:else>
+                                                <span class="divider">-</span>
+                                                </f:else>
+                                            </f:if>
+                                        </li>
+                                    </f:else>
+                                    </f:if>
+                            </f:else>
+                            </f:if>             
+                        </f:then>
+                    <f:else>
+                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <meta itemprop="position" content="{it.cycle}">
+                            <f:link.page additionalAttributes="{itemprop:'item',itemtype:'https://schema.org/Thing'}" title="{level.title}" pageUid="{level.uid}">
+                                <span itemprop="name">{f:if(condition:'{level.nav_title}',then:'{level.nav_title}',else:'{level.title}')}</span>
+                            </f:link.page>
+                            <span class="divider">-</span>		
+                        </li>
+                    </f:else>
+                </f:if>
+        </f:for>
+        </v:page.breadCrumb>
+        <f:if condition="{breadcrumb_news}"> 
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <meta itemprop="position" content="2">
+                <span itemprop="name">{breadcrumb_news}</span>
+            </li>
+        </f:if>
+        <f:if condition="{breadcrumb_glossar}">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <meta itemprop="position" content="2">
+                <span itemprop="name">{breadcrumb_glossar}</span>
+            </li>
+        </f:if>
+    </ul>
+
+</f:if>

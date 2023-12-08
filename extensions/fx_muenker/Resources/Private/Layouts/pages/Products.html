@@ -1,0 +1,22 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:render partial="header" arguments="{_all}" />
+<f:asset.css href="EXT:fx_muenker/Resources/Public/CSS/productslider.css" identifier="produtcslider" />
+<main class="withsidebar product">
+    <div class="container">
+        <f:render partial="Breadcrumb" arguments="{_all}" />
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <f:render section="content" />
+            </div>
+        </div>
+    </div>
+
+</main>
+<f:render partial="footer" arguments="{footer:footer}" />

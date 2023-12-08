@@ -1,0 +1,21 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<header class="notfixed header">
+	<div class="container logo-wrap">
+		<f:render partial="Logo" arguments="{_all}" />
+        <div class="search-wrap">
+            {v:content.render( pageUid: 949)}
+        </div>
+        <div class="lang-wrap">
+            <f:render partial="LangNav" arguments="{_all}" />
+        </div>
+		<span class="phone h2">
+			<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a href="tel:+49226599860">02265/9986-0</a>
+		</span>
+	</div> 
+    
+	<div class="border border-top border-bottom">
+		<div class="container">
+			<f:render partial="Navigation" arguments="{_all}" />
+		</div>
+	</div>
+</header>

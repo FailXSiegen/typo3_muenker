@@ -1,0 +1,25 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" id="meta-nav">
+  <v:menu.directory pages="29">
+    <ul role="menu" id="navi-meta" class="level-one" role="menu">
+      <f:for each="{menu}" as="menuPage" iteration="iteration">
+        <li itemprop="name" id="navpage-{menuPage.uid}" class="layout-{menuPage.layout}{f:if(condition:'{menuPage.hasSubPages}==1',then:' hassub',else:' nosub')}">
+          <a title="{menuPage.title}" itemprop="url" href="{menuPage.link}">{menuPage.title}</a>
+          <f:if condition="{menuPage.hasSubPages}">
+          	<i class="withsub fa fa-caret-down visible-xs visible-sm" aria-hidden="true"></i>
+            <ul role="menu" class="level-two">
+              <v:menu.directory pages="{menuPage.uid}" classActive="active" as="submenu1">
+                <f:for each="{submenu1}" as="level2">
+                  <li itemprop="name" class="layout-{level2.layout}{f:if(condition:'{level2.hasSubPages}==1',then: ' hassub',else:' nosub')}">
+                    <a itemprop="url" title="{level2.title}" href="{level2.link}">{level2.title}</a>
+                  </li>
+                </f:for>
+              </v:menu.directory>
+            </ul>
+          </f:if>
+        </li>
+      </f:for>
+    </ul>
+  </v:menu.directory>
+</nav>

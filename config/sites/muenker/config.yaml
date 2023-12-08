@@ -1,0 +1,105 @@
+base: 'https://www.muenker.com/'
+baseVariants:
+  -
+    base: 'https://muenker.ddev.site'
+    condition: 'getenv("TYPO3_CONTEXT") == "Development"'
+disableStaticFileCache: false
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=1037'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    base: /
+    typo3Language: de
+    locale: de_DE
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de
+    direction: ''
+    flag: de
+    languageId: 0
+    websiteTitle: ''
+  -
+    title: Englisch
+    enabled: true
+    base: /en/
+    typo3Language: default
+    locale: en_GB.UTF-8
+    iso-639-1: en
+    navigationTitle: ''
+    hreflang: en
+    direction: ''
+    fallbackType: strict
+    fallbacks: ''
+    flag: gb
+    languageId: 3
+    websiteTitle: ''
+  -
+    title: Tschechisch
+    enabled: true
+    base: /cs/
+    typo3Language: default
+    locale: cs_CS.UTF-8
+    iso-639-1: cs
+    navigationTitle: ''
+    hreflang: cs
+    direction: ''
+    fallbackType: strict
+    fallbacks: ''
+    flag: cz
+    languageId: 4
+    websiteTitle: ''
+rootPageId: 579
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      -
+        routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      news-title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+  Glossar:
+    type: Extbase
+    extension: Riglossar
+    plugin: Glossar
+    routes:
+      -
+        routePath: '/{glossar-title}'
+        _controller: 'Glossar::show'
+        _arguments:
+          glossar-title: glossar
+    aspects:
+      glossar-title:
+        type: PersistedAliasMapper
+        tableName: tx_riglossar_domain_model_glossar
+        routeFieldName: filename
+routes:
+  -
+    route: sitemap.xml
+    type: uri
+    source: 't3://page?uid=579&type=1533906435'
+websiteTitle: ''

@@ -1,0 +1,61 @@
+
+plugin.tx_riglossar {
+	view {
+		templateRootPath = {$plugin.tx_riglossar.view.templateRootPath}
+		partialRootPath = {$plugin.tx_riglossar.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_riglossar.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_riglossar.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+# Module configuration.
+module.tx_riglossar {
+	view {
+		templateRootPaths.0 = EXT:ri_glossar/Resources/Private/Backend/Templates/
+		partialRootPaths.0 = EXT:ri_glossar/Resources/Private/Backend/Partials/
+		layoutRootPaths.0 = EXT:ri_glossar/Resources/Private/Backend/Layouts/
+	}
+	persistence < plugin.tx_riglossar.persistence
+}
+
+
+plugin.tx_riglossar._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-ri-glossar table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-ri-glossar table th {
+		font-weight:bold;
+	}
+
+	.tx-ri-glossar table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+config.prefixLocalAnchors = all

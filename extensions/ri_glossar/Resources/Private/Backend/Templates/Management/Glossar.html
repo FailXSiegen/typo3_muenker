@@ -1,0 +1,10 @@
+{namespace r=Riconet\RiGlossar\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="content">
+    <r:widget.recordList table="tx_riglossar_domain_model_glossar"
+                         pid="{pid}"
+                         module="web_RiGlossarManageglossar"
+                         fields="h1, keywords"
+                         recursions="0" />
+</f:section>

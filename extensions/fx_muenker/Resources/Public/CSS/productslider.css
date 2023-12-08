@@ -1,0 +1,446 @@
+.product_color,
+.cad {
+  display: none;
+}
+.product_description {
+  width: 260px;
+  float: left;
+  min-height: 280px;
+  padding: 10px 0 10px 30px;
+  margin: 20px 0;
+  border-right: 1px solid #DEDEDE;
+}
+.product_description ul li {
+  list-style-image: url('helpers/arrow_02.gif');
+}
+.product_downloads a {
+  padding-left: 20px;
+}
+.product_downloads a[href*=".pdf"] {
+  background: url('pics/iconPDF.gif') center left no-repeat;
+}
+.product_downloads a[href*=".gif"] {
+  background: url('pics/iconPLAIN.gif') center left no-repeat;
+}
+.product_downloads a[href*=".dwg"] {
+  background: url('pics/iconPLAIN.gif') center left no-repeat;
+}
+.product_strength ul li,
+.product_types ul li {
+  list-style-image: url('helpers/arrow_02.gif');
+}
+.product_overview_group li {
+  float: left;
+  position: relative;
+  width: 148px;
+  height: 94px;
+  padding: 20px 20px 0 20px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: #E6E6E6;
+}
+.product_overview_group .bottom {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #2E3D50;
+  font-weight: normal;
+  padding-bottom: 20px;
+  float: left;
+}
+.product_overview_group a {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 47px 9px 0px 9px;
+  z-index: 999;
+}
+.product_overview_group img {
+  width: 170px;
+}
+.PViewer {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #fff;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .PViewer {
+    min-height: 300px;
+  }
+}
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  z-index: 9999;
+  background: #e1e1e1;
+  text-align: center !important;
+  padding-top: 170px;
+}
+.switcher {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  z-index: 99;
+  font-size: 12px;
+  text-align: center !important;
+  padding-top: 170px;
+}
+.negativ,
+.positiv {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+.negativ img,
+.positiv img {
+  width: 100%;
+  height: auto;
+}
+.title_profile {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  z-index: 999;
+  color: #1D4463;
+  font-size: 20px;
+  font-weight: normal;
+}
+@media (max-width: 768px) {
+  .title_profile {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+.title_color {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  z-index: 999;
+  color: #444;
+  font-size: 14px;
+  font-weight: normal;
+  min-width: 300px;
+}
+@media (max-width: 768px) {
+  .title_color {
+    position: relative;
+    top: auto;
+    left: auto;
+    float: left;
+    min-width: 1px;
+  }
+}
+.title_color_back {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  width: 0px;
+  height: 20px;
+  z-index: 999;
+  background: #888;
+}
+@media (max-width: 768px) {
+  .title_color_back {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+.ral_info {
+  position: absolute;
+  top: 90px;
+  left: 15px;
+  width: 21px;
+  height: 21px;
+  z-index: 999;
+  cursor: pointer;
+  background: url("/fileadmin/farbwechsler/colorinfo.png") bottom center no-repeat;
+}
+@media (max-width: 768px) {
+  .ral_info {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+.ral_infocontent {
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 600px;
+  padding: 15px;
+  z-index: 998;
+  color: #e1e1e1;
+  background: #434343;
+}
+@media (max-width: 768px) {
+  .ral_infocontent {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+  }
+}
+.view_navi {
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+  padding-bottom: 6px;
+  background: url("/fileadmin/farbwechsler/footer_pviewer_controll.png") bottom no-repeat;
+}
+@media (max-width: 768px) {
+  .view_navi {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 114px;
+    float: right;
+  }
+}
+.s_3d {
+  float: left;
+  width: 57px;
+  height: 47px;
+  cursor: pointer;
+  background: url("/fileadmin/farbwechsler/button_3d.png") 0px -48px no-repeat;
+}
+.s_3d.aktiv {
+  background: url("/fileadmin/farbwechsler/button_3d.png") 0px 0px no-repeat;
+}
+.s_2d {
+  float: left;
+  width: 57px;
+  height: 47px;
+  cursor: pointer;
+  background: url("/fileadmin/farbwechsler/button_2d.png") 0px 0px no-repeat;
+}
+.s_2d.aktiv {
+  background: url("/fileadmin/farbwechsler/button_2d.png") 0px -48px no-repeat;
+}
+.s_pos,
+.s_neg {
+  padding: 11px 0px;
+  text-align: center !important;
+  color: #7D8692;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 1px solid #3C4A5C;
+  background: #2E3D50;
+}
+body.cs .s_pos,
+body.cs .s_neg {
+  font-size: 11px;
+}
+.selected {
+  color: #fff;
+}
+.color_navi {
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+  overflow: auto;
+  background: #999;
+}
+.color_navi li {
+  float: left;
+}
+.color_navi li a {
+  position: relative;
+  bottom: 0px;
+  display: block;
+  height: 20px;
+  width: 40px;
+}
+.color_navi li a.activeSlide {
+  position: relative;
+  top: -30px;
+}
+.colorwave {
+  position: absolute;
+  bottom: 0px;
+  z-index: 9999;
+  width: 100%;
+}
+.icon_dock {
+  text-align: center;
+  padding-bottom: 0px;
+  line-height: 80px;
+  list-style-type: none;
+  width: 100%;
+  display: inline-block;
+  height: 80px;
+  vertical-align: bottom;
+  overflow: visible;
+  list-style-image: none;
+}
+.icon_dock li {
+  padding-left: 1px;
+  width: auto;
+  bottom: 0px;
+  padding-right: 1px;
+  display: inline-block;
+  height: auto;
+  vertical-align: bottom;
+}
+.icon_dock li .seperator {
+  border-bottom: medium none;
+  border-left: medium none
+            ;
+  width: 6px;
+  height: 60px;
+  border-top: medium none;
+  border-right: medium none;
+  background: url(icons/seperator.png) no-repeat center center;
+}
+.icon_dock li .seperator:hover {
+  border-bottom: medium none;
+  border-left: medium none;
+  width: 6px;
+  height: 60px;
+  border-top: medium none;
+  border-right: medium none;
+}
+.icon_dock li .clickcolor {
+  position: relative;
+  text-align: center;
+  padding-bottom: 0px;
+  margin: 0px;
+  outline-style: none;
+  padding-left: 0px;
+  outline-width: medium;
+  width: 30px;
+  padding-right: 0px;
+  display: block;
+  height: 30px;
+  color: black;
+  text-decoration: none;
+  padding-top: 0px;
+}
+.icon_dock li .clickcolor:hover {
+  width: 60px;
+  height: 120px;
+  padding-top: 15px;
+}
+.icon_dock li .clickcolor:hover span {
+  visibility: visible;
+}
+.icon_dock li .clickcolor.hover {
+  width: 120px;
+  height: 120px;
+  padding-top: 0px;
+}
+.icon_dock li .clickcolor span {
+  z-index: 100;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  visibility: hidden;
+  top: 0px;
+  left: 0px;
+}
+.icon_dock li .clickcolor img {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+}
+.colorwave2 {
+  z-index: 999;
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .colorwave2 {
+    position: absolute;
+    bottom: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .colorwave2 {
+    position: relative;
+  }
+}
+.colors {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.colors li {
+  display: inline-block;
+  vertical-align: bottom;
+  min-height: 25px;
+  min-width: 50px;
+  cursor: pointer;
+  margin: 0 0 0 -2px;
+  padding: 0 3px;
+}
+@media (max-width: 991px) {
+  .colors li {
+    margin: 0;
+    min-width: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .colors li {
+    height: 60px;
+    text-align: center;
+    padding: 17px !important;
+  }
+}
+.colors li .clickcolor {
+  text-align: center !important;
+  position: relative;
+  outline-style: none;
+  outline-width: medium;
+  padding: 0px;
+  display: block;
+  text-decoration: none;
+  padding: 0 10px;
+}
+.colors li div {
+  position: relative;
+  padding: 0px 0 10px 0;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.licht li {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: -2px;
+  height: 25px;
+}
+.licht li .clickcolor {
+  width: 80px;
+  display: block;
+  color: #1D4463;
+  font-weight: bold;
+  text-decoration: none;
+  background: #e1e1e1;
+  padding: 0px 0 10px 0;
+}
+.licht li .clickcolor div {
+  position: relative;
+  padding: 0px 0 10px 0;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.products_related {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.product_single h3 {
+  font-size: 12px;
+}

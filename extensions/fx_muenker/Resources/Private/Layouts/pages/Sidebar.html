@@ -1,0 +1,36 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:render partial="header" arguments="{_all}" />
+
+<main class="withsidebar">
+	<div class="container">
+       
+        <f:render partial="Breadcrumb" arguments="{_all}" />    
+     
+        <div class="row">
+            <div class="col-md-12">
+            	<f:if condition="{data.is_siteroot}!=1">
+                    <f:if condition="{sword}">
+                        <f:then></f:then>
+                        <f:else> 
+                            {v:content.render(column: 0, pageUid: 124)} 
+                        </f:else>
+                    </f:if>
+                </f:if>
+          </div>
+        </div>
+        <div class="row">
+            <f:format.raw>{head}</f:format.raw>
+        </div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 hidden-xs">
+				<f:render partial="sidenav" arguments="{_all}" /> 
+				<f:format.raw>{sidebar}</f:format.raw>
+			</div>
+			<div class="col-md-9 col-sm-8 col-xs-12 border-left">
+				<f:render section="content" />
+			</div>
+		</div>
+	</div>
+	
+</main>
+<f:render partial="footer" arguments="{footer:footer}" /> 

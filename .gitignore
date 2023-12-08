@@ -1,0 +1,110 @@
+########################
+# TYPO3 CMS
+# global ignore file
+########################
+#
+########################
+#
+# Ignore temporary files (left by editors and OS)
+*~
+*.bak
+*.swp
+.DS_Store
+.env
+*.sh
+*.lock
+/backup
+#
+# Ignore by common IDEs used directories/files
+nbproject
+*.idea
+*.project
+.buildpath
+.settings
+.TemporaryItems
+.webprj
+.vscode
+#
+# Temporary files and folders
+/.env.local
+/.env.*.local
+auth.json
+.cache
+.php_cs.cache
+.sass-cache
+.session
+*.log
+tmp/
+build/
+.parcel-cache
+#
+# TypeScript stuff
+.baseDir.ts
+.tscache
+#
+# Ignore composer stuff
+/var
+/bin
+/vendor
+#
+# Ignore common TYPO3 CMS files/directories
+/fileadmin
+/typo3conf
+/typo3temp
+/uploads
+/public/*
+!/public/typo3conf
+!/public/Kundenportal
+!/public/api
+/public/api/data.json
+/public/typo3conf/ext
+/public/typo3conf/l10n
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/PackageStates.php
+/public/typo3conf/image_autoresize.config.php
+!/public/assets
+/blaetterkataloge
+
+# Node.js
+node_modules
+
+
+## TYPO3
+## -------------------------------------------------------------------------------
+## Ignore serveral upload and file directories.
+/fileadmin/user_upload/
+/fileadmin/_temp_/
+/fileadmin/_migrated_/
+/fileadmin/_processed_/
+/fileadmin/media/
+/uploads/
+#
+/typo3
+/typo3_src
+/index.php
+/t3lib
+
+# Ignore temp directory.
+/typo3temp/
+
+# Node.js
+/Build/
+
+#
+# Custom
+/.htaccess
+/.htpasswd
+todo.txt
+Autoconf_*
+import_db_ddev.sh
+
+# Ignore
+!/api
+!/fileadmin
+/fileadmin/*
+!/fileadmin/scripts
+!/fileadmin/sites
+!/deploy.php
+!/robots.txt
+!/robots_protected.txt
+!after_deploy.sh
