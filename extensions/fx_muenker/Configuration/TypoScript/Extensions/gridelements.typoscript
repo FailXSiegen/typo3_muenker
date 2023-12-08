@@ -1,0 +1,73 @@
+
+tt_content {  
+  gridelements_pi1.20.stdWrap.outerWrap.cObject = CASE
+  gridelements_pi1.20.stdWrap.outerWrap.cObject {
+      key.field = layout
+      default = TEXT
+      default.value = <div class="container grid griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div>  
+      default.insertData = 1  
+      0 = TEXT
+      0.value = <div class="container grid griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div> 
+      0.insertData = 1 
+      1 = TEXT
+      1.value = <div class="container-fluid grid griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div>
+      1.insertData = 1  
+      2 = TEXT
+      2.value = <div class="grid griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div>
+      2.insertData = 1  
+      5 = TEXT
+      5.value = <div class="container produktbox grid griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div>
+      5.insertData = 1  
+  }
+}
+tt_content.gridelements_pi1.20.10.setup { 
+  3 < lib.gridelements.defaultGridSetup
+  3.wrap = <div class="content-wrap griduid-{field:tx_gridelements_backend_layout} {field:ricobgcolor} distance-before-{field:ricodistancebefore} distance-after-{field:ricodistanceafter}">|</div>
+  3.insertData = 1
+}
+tt_content.gridelements_pi1.20.wrap.insertData = 1
+
+
+tt_content.gridelements_pi1.20.10.setup.accordion.columns.101.renderObj.20.gridelements_pi1 = < tt_content.gridelements_pi1
+#lib.fluidContent.stdWrap.dataWrap.override = <div class="parallax" data-parallax='{field:parallaxattribute}'>|</div>
+lib.bootstrap_grids.accordion.columns.101.renderObj.10.wrap = <div class="panel-heading"><h2 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" aria-expanded="false" aria-controls="collapse-{field:uid}" class="collapsed accordion-toggle">|</a></h2></div><div id="collapse-{field:uid}" class="panel-collapse collapse" role="tabpanel"><div class="panel-body">
+tt_content.gridelements_pi1.20.10.setup.accordion.columns.101.renderObj.10.wrap = <div class="panel-heading"><h2 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" aria-expanded="false" aria-controls="collapse-{field:uid}" class="collapsed accordion-toggle">|</a></h2></div><div id="collapse-{field:uid}" class="panel-collapse collapse" role="tabpanel"><div class="panel-body">
+
+tt_content.gridelements_pi1.20.10.setup.accordion.columns.101.renderObj.10.wrap.override  >
+lib.bootstrap_grids.accordion.columns.101.renderObj.10.wrap.override >
+page.jsFooterInline {
+  20 < lib.bootstrap_grids.slider.append
+}
+lib.bootstrap_grids.slider {
+  append >
+}
+tt_content.gridelements_pi1.20.10.setup {
+  slider < lib.bootstrap_grids.slider
+}
+
+lib.bootstrap_grids.slider {
+  	append = COA
+	append.wrap (
+      ( function($) {
+        $(document).ready(function() {
+        |
+        });
+      }) (jQuery);
+    )
+    append {
+      30 = TEXT
+            30.insertData = 1
+            30.value (
+              useCSS: false
+            )
+    }
+}
+page.jsFooterInline {
+  20 < lib.bootstrap_grids.slider.append
+}
+lib.bootstrap_grids.slider {
+  append >
+}
+tt_content.gridelements_pi1.20.10.setup {
+  slider < lib.bootstrap_grids.slider
+}

@@ -1,0 +1,10 @@
+plugin.tx_powermail {
+    settings {
+        setup {
+            prefill {
+                produktname = TEXT
+                produktname.data = page:title
+            }
+        }
+    }
+}

@@ -1,0 +1,2 @@
+lib.produktanfrage < styles.content.get
+lib.produktanfrage.select.pidInList = 1095

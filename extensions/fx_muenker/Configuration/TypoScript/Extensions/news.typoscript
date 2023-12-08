@@ -1,0 +1,49 @@
+plugin {
+  tx_news {
+    settings {
+        link.skipControllerAndAction = 0
+      list {
+        link = 68
+        media.image {
+          maxWidth = 270
+          maxHeight = 270
+          liste {
+            maxWidth = 600
+            maxHeight = 300
+          }
+        }
+      }
+    }
+    _LOCAL_LANG {
+      de {
+        morenews = mehr News
+        dateFormat = %d.%m.%Y
+        more-link = weiter lesen
+      }
+      en {
+        morenews = more News
+        dateFormat = %d.%m.%Y
+        more-link = continue reading
+      }
+    }
+  }
+}
+
+plugin.tx_news.settings.list.paginate.insertAbove = 0
+
+lib.tx_news.contentElementRendering >
+lib.tx_news.contentElementRendering = CONTENT
+lib.tx_news.contentElementRendering {
+  table = tt_content
+  select {
+    #pidInList = 47,179
+    uidInList.current = 1
+    orderBy = sorting
+    languageField = sys_language_uid
+  }
+}
+
+plugin.tx_news.settings.displayDummyIfNoMedia = 0
+
+module.tx_news.settings.detail.media.image.lightbox.class = fancybox
+plugin.tx_news.settings.detail.media.image.lightbox.class = fancybox

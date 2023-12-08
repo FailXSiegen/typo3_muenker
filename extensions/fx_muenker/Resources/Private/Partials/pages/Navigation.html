@@ -1,54 +1,48 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-
 <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" id="header-nav" class="navbar navbar-toggleable-sm bg-faded clbg-blue">
 	<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
 		<span class="sr-only navbar-toggler-icon">Toggle navigation</span>
 		<i class="fa fa-bars hidden-lg" aria-hidden="true"></i>
 	</button>
     <div class="navbar-collapse">
-    <v:menu.directory pages="579" classActive="active" classCurrent="current" classFirst="first" classLast="last" linkCurrent="0">
-        <ul role="menu" id="navbar-collapse-1" class="level-one collapse navbar-nav mr-auto " role="menu">
-          <f:for each="{menu}" as="menuPage" iteration="iteration">
-            <li itemprop="name" class="{menuPage.class} nav-item layout-{menuPage.layout}">
-              <f:if condition="{menuPage.hasSubPages}">
+      <ul role="menu" id="navbar-collapse-1" class="level-one collapse navbar-nav mr-auto " role="menu">
+          <f:for each="{mainNavigation}" as="menuPage" iteration="iteration">
+            <li itemprop="name" class="nav-item layout-{menuPage.layout} {f:if(condition:iteration.isFirst, then:'first')} {f:if(condition:iteration.isLast, then:'last')} {f:if(condition:menuPage.active, then:'active')} {f:if(condition:menuPage.current, then:'current')}">
+              <f:if condition="{menuPage.children}">
                  <f:then>
                         <a title="{menuPage.title}"
                            aria-label="Lese mehr über {menuPage.title}"
                            itemprop="url" href="{menuPage.link}"
                            class="nav-link ">
-                            {f:if(condition:'{menuPage.nav_title}',then:'{menuPage.nav_title}', else:'{menuPage.title}')}
+                                {menuPage.title}
                         </a>
                         <i class="withsub fa fa-caret-down visible-xs visible-sm" aria-hidden="true" ></i>
-                        <ul role="menu" class="level-two" aria-labelledby="dropdown{menuPage.uid}">
-                          <v:menu.directory pages="{menuPage.uid}" as="submenu1" classActive="active" classCurrent="current" linkCurrent="0">
-                            <f:for each="{submenu1}" as="level2">
-                                <li itemprop="name" class="{level2.class} layout-{level2.layout} ">
+                        <ul role="menu" class="level-two" aria-labelledby="dropdown{menuPage.data.uid}">
+                            <f:for each="{menuPage.children}" as="level2">
+                                <li itemprop="name" class="layout-{level2.data.layout} {f:if(condition:level2.active, then:'active')}{f:if(condition:level2.current, then:'current')}">
                                     <a itemprop="url"
                                        aria-label="Lese mehr über {level2.title}"
                                        title="{level2.title}"
                                        href="{level2.link}">
-                                        {f:if(condition:'{level2.nav_title}',then:'{level2.nav_title}', else:'{level2.title}')}
+                                            {level2.title}
                                     </a>
-                                    <f:if condition="{level2.hasSubPages}">
+                                    <f:if condition="{level2.children}">
                                         <i class="withsub fa fa-caret-down  visible-xs visible-sm" aria-hidden="true"></i>
                                         <ul role="menu" class="level-three">
-                                        <v:menu.directory pages="{level2.uid}" as="submenu2" classActive="active" classCurrent="current" linkCurrent="0">
-                                            <f:for each="{submenu2}" as="level3">
-                                                <li itemprop="name" class="{level3.class} layout-{level3.layout}">
+                                            <f:for each="{level2.children}" as="level3">
+                                                <li itemprop="name" class="layout-{level3.data.layout} {f:if(condition:level3.active, then:'active')}{f:if(condition:level3.current, then:'current')}">
                                                     <a aria-label="Lese mehr über {level3.title}"
                                                        itemprop="url"
                                                        title="{level3.title}"
                                                        href="{level3.link}">
-                                                        {f:if(condition:'{level3.nav_title}',then:'{level3.nav_title}', else:'{level3.title}')}
+                                                        {level3.title}
                                                     </a>
                                                 </li>
                                             </f:for>
-                                        </v:menu.directory>
                                         </ul>
                                     </f:if>
                                 </li>
                             </f:for>
-                          </v:menu.directory>
                         </ul>
                 </f:then>
                 <f:else>
@@ -60,13 +54,12 @@
                     class="nav-link"
                     aria-haspopup="false"
                     aria-expanded="false">
-                     {f:if(condition:'{menuPage.nav_title}',then:'{menuPage.nav_title}', else:'{menuPage.title}')}
+                     {menuPage.title}
                     </a>
                 </f:else>
               </f:if>
             </li>
           </f:for>
         </ul>
-    </v:menu.directory>
     </div>
 </nav>

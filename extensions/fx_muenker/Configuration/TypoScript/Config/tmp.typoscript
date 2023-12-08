@@ -1,0 +1,32 @@
+tmp.content < styles.content.get
+
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+tmp.breadcrumb_news = CONTENT
+tmp.breadcrumb_news {
+    table = tx_news_domain_model_news
+    select {
+        pidInList = 850
+        uidInList.data = GP:tx_news_pi1|news
+        languageField = sys_language_uid
+    }
+    renderObj = TEXT
+    renderObj.field = title
+}
+[end]
+[traverse(request.getQueryParams(), 'tx_riglossar_glossar/glossar') > 0]
+tmp.breadcrumb_glossar = CONTENT
+tmp.breadcrumb_glossar {
+    table = tx_riglossar_domain_model_glossar
+    select {
+        pidInList = 740
+        uidInList.data = GP:tx_riglossar_glossar|glossar 
+        languageField = sys_language_uid
+    }
+    renderObj = TEXT
+    renderObj.field = title
+}
+[end]
+[125 in tree.rootLineIds]
+tmp.sword = TEXT
+tmp.sword.value = true
+[end]

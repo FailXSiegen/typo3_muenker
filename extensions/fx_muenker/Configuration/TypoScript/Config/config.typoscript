@@ -1,0 +1,27 @@
+config {
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = @
+  compressJs = 1
+  compressCss = 1
+  concatenateJs = 1
+  concatenateCss = 1
+  moveJsFromHeaderToFooter = 1
+
+  removeDefaultJS = external
+  prefixLocalAnchors = all
+  renderCharset = utf-8
+  metaCharset = utf-8
+  debug = 0
+
+  disablePrefixComment = 1
+  typolinkCheckRootline = 1
+  contentObjectExceptionHandler = 0
+  noPageTitle = 2
+  absRefPrefix = auto
+  noScaleUp = 1
+}
+
+
+lib.fluidContent.settings.media.popup.width = 1920m
+lib.fluidContent.settings.media.popup.height = 1080m
+lib.parseFunc_RTE.tags.link.typolink.target.override = _self

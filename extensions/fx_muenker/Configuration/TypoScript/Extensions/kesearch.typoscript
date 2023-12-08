@@ -1,0 +1,17 @@
+plugin {
+  tx_kesearch_pi1 {
+      view {
+          templateRootPaths.5 = EXT:fx_muenker/Resources/Private/Templates/ke_search/
+          partialRootPaths.5 = EXT:fx_muenker/Resources/Private/Partials/ke_search/
+          layoutRootPaths.5 = EXT:fx_muenker/Resources/Private/Layouts/ke_search/
+      }
+  }
+  tx_kesearch_pi2 {
+    highlightedWord_stdWrap.wrap = <div class="mark">|</div>  
+  }
+}
+
+plugin.tx_kesearch_pi2.templateRootPath = EXT:fx_muenker/Resources/Private/Templates/ke_search/
+plugin.tx_kesearch_pi2.layoutRootPath = EXT:fx_muenker/Resources/Private/Layouts/ke_search/
+plugin.tx_kesearch_pi2.partialRootPath = EXT:fx_muenker/Resources/Private/Partials/ke_search/
+plugin.tx_kesearch_pi1 = USER

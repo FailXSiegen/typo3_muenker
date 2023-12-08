@@ -1,0 +1,3 @@
+lib.pagetitle = TEXT
+lib.pagetitle.data = page:title
+lib.pagetitle.wrap = <h3>|</h3>

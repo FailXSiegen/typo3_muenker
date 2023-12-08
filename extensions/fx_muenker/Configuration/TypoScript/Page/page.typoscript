@@ -1,0 +1,180 @@
+
+
+page = PAGE
+page {
+  typeNum = 0
+  shortcutIcon = fileadmin/favicon.ico
+  bodyTagCObject >
+  bodyTagCObject = TEXT
+  bodyTagCObject {
+    field = uid
+    dataWrap = <body itemscope itemtype="http://schema.org/WebPage" id="page-|" class="de belayout-{field:backend_layout} felayout-{field:layout}">
+  }
+  10 = FLUIDTEMPLATE
+  10 {
+    file.cObject = CASE
+    file.cObject {  
+      key.data = levelfield:-2, backend_layout_next_level, slide
+      key.override.field = backend_layout
+      
+      3 = TEXT
+      3.value = EXT:fx_muenker/Resources/Private/Templates/pages/Sidebar.html
+      
+            4 = TEXT
+      4.value = EXT:fx_muenker/Resources/Private/Templates/pages/Products.html
+            
+      default = TEXT
+      default.value = EXT:fx_muenker/Resources/Private/Templates/pages/Default.html
+    }
+    layoutRootPaths {
+      10 = EXT:fx_muenker/Resources/Private/Layouts/pages/
+    }
+    partialRootPaths {
+      10 =  EXT:fx_muenker/Resources/Private/Partials/pages/
+    }
+    variables {       
+        content < tmp.content
+
+        head < styles.content.get
+        head.select.where = colPos=1
+        head.wrap = <div class="head">|</div>
+
+        sidebar < styles.content.get
+        sidebar.select.where = colPos=3
+        
+        footer < styles.content.get
+        footer.select.where = colPos=2
+        footer.slide = -1
+            
+        breadcrumb_news < tmp.breadcrumb_news
+        breadcrumb_glossar < tmp.breadcrumb_glossar
+        sword < tmp.sword
+    }
+    
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = directory
+            special.value = {$failx.mainNavigationPid}
+            levels = 3
+            includeSpacer = 0
+            as = mainNavigation
+        }
+    }
+  }
+  headerData {
+      1 >
+      5 = TEXT
+      5.value = <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+      10 = TEXT
+      10.value = <meta name="viewport" content="width=device-width, initial-scale=1">
+      40 = TEXT
+      40 {
+          stdWrap.cObject = COA
+          stdWrap.cObject {
+              10 = TEXT
+              10 {
+                  field = subtitle//title
+                  noTrimWrap = |<title>|  |
+              }
+              30 = TEXT
+              30.noTrimWrap = || • Münker Metallprofile GmbH</title>|
+          }
+      }
+  }
+  
+    includeCSS {
+        bootstrap = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/css/bootstrap.min.css
+        bootstraptheme = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/css/bootstrap-theme.min.css
+        fontawesome = EXT:fx_muenker/Resources/Public/Vendor/font-awesome/css/font-awesome.min.css
+        fancy = EXT:fx_muenker/Resources/Public/CSS/fancybox/jquery.fancybox.css
+        owl1 = EXT:fx_muenker/Resources/Public/CSS/owl/owl.carousel.css
+        stylesheet = EXT:fx_muenker/Resources/Public/CSS/stylesheet.css
+    }
+    includeJSLibs {
+        jquery =  EXT:fx_muenker/Resources/Public/Vendor/jquery/dist/jquery.min.js
+        bootstrap = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/js/bootstrap.min.js
+        tether = EXT:fx_muenker/Resources/Public/Vendor/tether/dist/js/tether.min.js
+    }
+    includeJSFooter {
+        owl = EXT:fx_muenker/Resources/Public/JavaScript/owl/owl.carousel.js
+        fancy = EXT:fx_muenker/Resources/Public/JavaScript/fancybox/jquery.fancybox.js
+        jcarousel = EXT:fx_muenker/Resources/Public/JavaScript/jcarousel.js
+        farbwechsler = EXT:fx_muenker/Resources/Public/JavaScript/farbwechsler.js
+        custom = EXT:fx_muenker/Resources/Public/JavaScript/javascript.js
+    }
+}
+
+
+downloadarchive = PAGE
+downloadarchive {
+  typeNum = 255
+  config {
+    disableAllHeaderCode = 0
+    no_cache = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+  }
+  includeJS {
+    jquery =  EXT:fx_muenker/Resources/Public/Vendor/jquery/dist/jquery.min.js
+    jquery {
+      forceOnTop = 1
+      disableCompression = 1
+      excludeFromConcatenation = 1
+    } 
+  }
+  bodyTag >
+  bodyTagCObject = TEXT
+  bodyTagCObject.value = iframe
+  bodyTagCObject.wrap = <body class="|">
+  10 < styles.content.get
+}
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+page.config.noPageTitle = 2
+page.headerData {
+    40.stdWrap.cObject {
+        10 < tmp.breadcrumb_news
+        10.stdWrap.noTrimWrap = |<title>|  |
+    }
+}
+[end]
+[traverse(request.getQueryParams(), 'tx_riglossar_glossar/glossar') > 0]
+page.config.noPageTitle = 2
+page.headerData {
+    40.stdWrap.cObject {
+        10 < tmp.breadcrumb_glossar
+        10.stdWrap.noTrimWrap = |<title>|  |
+    }
+}
+[end]
+
+page.headerData.25 = TEXT
+page.headerData.25.value (
+  <link rel="preload" href="/typo3conf/ext/fx_muenker/Resources/Public/Vendor/font-awesome/fonts/fontawesome-webfont.woff2" as="font" />
+)
+
+page.meta.description.stripHTML = 1
+page.headerData.200 = TEXT
+page.headerData.200.value (
+<!-- Google Tag Manager -->
+<script type="text/plain" data-cookiefirst-category="performance">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKZM3XG');</script>
+<!-- End Google Tag Manager -->
+)
+page.footerData.200 = TEXT
+page.footerData.200.value (
+<!-- Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKZM3XG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+)
+
+[applicationContext == "Development"]
+page.headerData.16 >
+page.headerData.200 >
+page.footerData.200 >
+[global]
