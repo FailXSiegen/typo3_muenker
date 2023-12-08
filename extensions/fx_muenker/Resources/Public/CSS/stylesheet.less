@@ -21,6 +21,7 @@
     opacity:1;
 }
 a {
+    text-decoration: none;
     color:@blue;
     &:focus,
     &:active,
@@ -30,10 +31,15 @@ a {
 }
 body {
     color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
 }
 h1,h2,h3 {
     color:@blue;
     margin-bottom:15px;
+    line-height: 1.1;
+    margin-top: 20px;
 }
 hr {
     margin: 10px 0;
@@ -173,7 +179,7 @@ footer {
            
        }
 }
-.flexslider {
+.container > .flexslider {
     margin:0;
     border:0;
     .border-radius(0);
@@ -446,11 +452,7 @@ body > header.header {
     margin:0 5px;
 }
 #header-nav {
-	display:block;
     padding:0;
-    .navbar-collapse {
-     
-    }
     .navbar-toggler {
         display:none;
         @media(max-width:991px) {
@@ -795,21 +797,20 @@ main {
     margin-top:180px;
     margin-bottom:20px;
 }
-.panel-default {
-    > .panel-heading{
+.accordion-item {
+    > .accordion-header{
         background:none;
         background-color:@blue;
-        .panel-title {
-            padding:0;
+        .accordion-button {
+            background-color:@blue;
+            width:100%;
             border:0;
-            a {
-                width:100%;
-                height:@navheight/2;
-                line-height:@navheight/2;
-                display:block;
-                color:@white;
-            }
+            height:@navheight/2;
+            line-height:@navheight/2;
+            display:block;
+            color:@white;
         }
+    
     }
 }
 ul.reference {
@@ -835,12 +836,11 @@ ul.reference {
     }
 }
 
-.flex-control-nav {
+.flexslider > .flex-control-nav {
     bottom:15px;
     z-index: 99;
-    
 }
-.flex-control-paging li a {
+.flexslider > .flex-control-paging li a {
     .border-radius(0);
     background:@white;
     text-indent:9999px;
@@ -1270,4 +1270,12 @@ ul.reference {
       }
     }
   }
+}
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: 1140px;
+  }
+}
+.accordion-header {
+  margin-top: 0;
 }

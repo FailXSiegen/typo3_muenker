@@ -20,6 +20,7 @@
   opacity: 1;
 }
 a {
+  text-decoration: none;
   color: #082b53;
 }
 a:focus,
@@ -29,12 +30,17 @@ a:visited {
 }
 body {
   color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 h1,
 h2,
 h3 {
   color: #082b53;
   margin-bottom: 15px;
+  line-height: 1.1;
+  margin-top: 20px;
 }
 hr {
   margin: 10px 0;
@@ -193,7 +199,7 @@ footer ul li {
     display: none;
   }
 }
-.flexslider {
+.container > .flexslider {
   margin: 0;
   border: 0;
   -webkit-border-radius: 0;
@@ -1064,7 +1070,6 @@ body > header.header .phone.h2 {
   margin: 0 5px;
 }
 #header-nav {
-  display: block;
   padding: 0;
 }
 #header-nav .navbar-toggler {
@@ -1398,16 +1403,14 @@ main {
   margin-top: 180px;
   margin-bottom: 20px;
 }
-.panel-default > .panel-heading {
+.accordion-item > .accordion-header {
   background: none;
   background-color: #082b53;
 }
-.panel-default > .panel-heading .panel-title {
-  padding: 0;
-  border: 0;
-}
-.panel-default > .panel-heading .panel-title a {
+.accordion-item > .accordion-header .accordion-button {
+  background-color: #082b53;
   width: 100%;
+  border: 0;
   height: 48px/2;
   line-height: 48px/2;
   display: block;
@@ -1439,11 +1442,11 @@ ul.reference li {
     margin: 0 0 10px 0;
   }
 }
-.flex-control-nav {
+.flexslider > .flex-control-nav {
   bottom: 15px;
   z-index: 99;
 }
-.flex-control-paging li a {
+.flexslider > .flex-control-paging li a {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1455,7 +1458,7 @@ ul.reference li {
   overflow: hidden;
   border: 1px solid #fff;
 }
-.flex-control-paging li a.flex-active {
+.flexslider > .flex-control-paging li a.flex-active {
   background: #DC9A29;
 }
 @media (max-width: 768px) {
@@ -1834,5 +1837,18 @@ ul.reference li {
   .news-list-view .article.col-md-6 {
     min-height: 161px;
   }
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1140px;
+  }
+}
+.accordion-header {
+  margin-top: 0;
 }
 /*# sourceMappingURL=stylesheet.css.map */

@@ -23,7 +23,8 @@ namespace Riconet\RiGlossar\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -37,12 +38,12 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Glossar extends AbstractEntity {
 
 	/**
-	 * Title for head tags
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate(validator="NotEmpty")
-	 */
-	protected $title = '';
+  * Title for head tags
+  *
+  * @var string
+  * @Validate(validator="NotEmpty")
+  */
+ protected $title = '';
 
 	/**
 	 * Normal Title
@@ -52,20 +53,20 @@ class Glossar extends AbstractEntity {
 	protected $h1 = '';
 
 	/**
-	 * Filename for URL rewrite
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate(validator="NotEmpty")
-	 */
-	protected $filename = '';
+  * Filename for URL rewrite
+  *
+  * @var string
+  * @Validate(validator="NotEmpty")
+  */
+ protected $filename = '';
 
 	/**
-	 * Main content
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate(validator="NotEmpty")
-	 */
-	protected $maintext = '';
+  * Main content
+  *
+  * @var string
+  * @Validate(validator="NotEmpty")
+  */
+ protected $maintext = '';
 
 	/**
 	 * Description for head tags
@@ -75,20 +76,20 @@ class Glossar extends AbstractEntity {
 	protected $description = '';
 
     /**
-				 * images
-				 *
-				 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-				 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
-				 */
-				protected $images = null;
+     * images
+     *
+     * @var ObjectStorage<FileReference>
+     * @Cascade("remove")
+     */
+    protected $images = null;
     
     /**
-				 * media
-				 *
-				 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-				 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
-				 */
-				protected $media = null;
+     * media
+     *
+     * @var ObjectStorage<FileReference>
+     * @Cascade("remove")
+     */
+    protected $media = null;
 
     /**
      * Class constructor.
@@ -209,7 +210,7 @@ class Glossar extends AbstractEntity {
 	/**
      * Adds a Image
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @param FileReference $image
      * @return void
      */
     public function addImage(FileReference $image)
@@ -220,7 +221,7 @@ class Glossar extends AbstractEntity {
     /**
      * Removes a Image
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove The Image to be removed
+     * @param FileReference $imageToRemove The Image to be removed
      * @return void
      */
     public function removeImage(FileReference $imageToRemove)
@@ -231,7 +232,7 @@ class Glossar extends AbstractEntity {
     /**
      * Returns the images
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     * @return ObjectStorage<FileReference> $images
      */
     public function getImages()
     {
@@ -241,7 +242,7 @@ class Glossar extends AbstractEntity {
     /**
      * Sets the media
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     * @param ObjectStorage<FileReference> $images
      * @return void
      */
     public function setImages(ObjectStorage $image)
@@ -252,7 +253,7 @@ class Glossar extends AbstractEntity {
     /**
      * Adds a Media
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     * @param FileReference $media
      * @return void
      */
     public function addMedia($media)
@@ -263,7 +264,7 @@ class Glossar extends AbstractEntity {
     /**
      * Removes a Media
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove The Media to be removed
+     * @param FileReference $imageToRemove The Media to be removed
      * @return void
      */
     public function removeMedia($imageToRemove)
@@ -274,7 +275,7 @@ class Glossar extends AbstractEntity {
     /**
      * Returns the media
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
+     * @return ObjectStorage<FileReference> $media
      */
     public function getMedia()
     {
@@ -284,7 +285,7 @@ class Glossar extends AbstractEntity {
     /**
      * Sets the media
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
+     * @param ObjectStorage<FileReference> $media
      * @return void
      */
     public function setMedia($media)

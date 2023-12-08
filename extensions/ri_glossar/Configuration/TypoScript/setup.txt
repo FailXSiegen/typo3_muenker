@@ -56,6 +56,5 @@ plugin.tx_riglossar._CSS_DEFAULT_STYLE (
 	.typo3-messages .message-ok {
 		color:green;
 	}
-
 )
 config.prefixLocalAnchors = all

@@ -30,13 +30,13 @@ styles.content {
         defaultAudioHeight = 30
     }
 }
-PAGE_TARGET =
-content.pageFrameObj =
-styles.content.links.extTarget =
-styles.content.mailform.target =
-styles.content.searchresult.resultTarget =
-styles.content.links.target =
-styles.content.searchresult.target =
+PAGE_TARGET = 
+content.pageFrameObj = 
+styles.content.links.extTarget = 
+styles.content.mailform.target = 
+styles.content.searchresult.resultTarget = 
+styles.content.links.target = 
+styles.content.searchresult.target = 
 
 styles.content.loginform.pid = 0
 styles.templates.templateRootPath = EXT:fx_muenker/Resources/Private/Templates/fluid_styled_content/

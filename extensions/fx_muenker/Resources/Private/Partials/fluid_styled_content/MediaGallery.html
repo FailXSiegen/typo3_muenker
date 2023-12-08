@@ -92,7 +92,7 @@
 		height="{column.dimensions.height}"
 		alt="{column.media.alternative}"
 		title="{column.media.title}"
-        class="img img-responsive"
+        class="img img-responsive img-fluid"
 	/>
 </f:section>
 
@@ -104,7 +104,7 @@
 		<source media="(max-width: 991px) and (orientation:landscape)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'900m',cropVariant:'tablet-landscape')}">
 		<source media="(max-width: 767px) and (orientation:portrait)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}">
 		<source media="(max-width: 767px) and (orientation:landscape)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-landscape')}">
-		<f:image treatIdAsReference="1" class="img img-responsive" src="{column.media.uid}" title="{column.media.title}" alt="{column.media.alternative}" crop="{image.crop}" />
+		<f:image treatIdAsReference="1" class="img img-responsive img-fluid" src="{column.media.uid}" title="{column.media.title}" alt="{column.media.alternative}" crop="{image.crop}" />
 	</picture>
 </f:section>
 </html>

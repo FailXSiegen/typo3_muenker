@@ -5,7 +5,7 @@ lib.language {
         special = language
         special.value = 0,3,4
         special.normalWhenNoLanguage = 0
-        wrap =
+        wrap = 
         1 = TMENU
         1 {
             noBlur = 1
@@ -22,12 +22,10 @@ lib.language {
                         addQueryString = 1
                         addQueryString.exclude = L,id,cHash,no_cache
                         addQueryString.method = GET
-                        useCacheHash = 1
                         no_cache = 0
                     }
                 }
             }
-
             ACT < .NO
             ACT.linkWrap = <li class="active">|</li>
 
@@ -36,7 +34,6 @@ lib.language {
                 linkWrap = <li class="text-muted">|</li>
                 stdWrap.typolink >
             }
-
             USERDEF2 < .ACT
             USERDEF2 {
                 linkWrap = <li class="text-muted">|</li>
@@ -44,6 +41,5 @@ lib.language {
             }
         }
     }
-
     wrap = <ul id="language_menu" class="language-menu">|</ul>
 }

@@ -72,7 +72,7 @@ $(function () {
     $(this).toggleClass('fa-caret-down').toggleClass('fa-caret-up').toggleClass('active')
     $(this).next().toggleClass('open')
   })
-  if (gaanonym.switcher.isActive()) {
+  if (gaanonym.switcher.isActive() && typeof ga !== 'undefined') {
     $('.fancybox').click(function () {
       //Bilder
       // _gaq.push(['_trackEvent', 'Bild',window.location.pathname,$(this).attr('title')]);
@@ -133,16 +133,6 @@ $(function () {
     auto: 15,
     animation: 2000
   })
-  $('.flexslider').flexslider({
-    slideshowSpeed: 5000,
-    animationSpeed: 500,
-    useCSS: false,
-    controlNav: true,
-    directionNav: false,
-    pauseOnHover: false,
-
-  })
-
 })
 
 function gaanon () {

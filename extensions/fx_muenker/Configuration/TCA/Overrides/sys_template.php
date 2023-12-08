@@ -25,15 +25,15 @@
   *  This copyright notice MUST APPEAR in all copies of the script!
   ***************************************************************/
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
 call_user_func(
-    function ($_EXTKEY) {
+    function ($extensionKey) {
         // Add static TypoScript file.
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-            $_EXTKEY,
+            $extensionKey,
             'Configuration/TypoScript',
             'Base Provider Extension'
         );

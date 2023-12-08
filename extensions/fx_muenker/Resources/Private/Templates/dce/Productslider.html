@@ -21,13 +21,13 @@
 		<div class="cad" style="display: none;">
 			<div class="negativ" style="display: block;"> 
 				<f:for each="{field.cadnegative}" as="cadnegative">
-					<f:image src="{cadnegative.publicUrl}" alt="{cadnegative.altText}" class="img img-responsive" treatIdAsReference="0" />	
+					<f:image src="{cadnegative.publicUrl}" alt="{cadnegative.altText}" class="img img-responsive img-fluid" treatIdAsReference="0" />	
 				</f:for>
 			</div>
 			<f:if condition="{field.cadpositive}">
 				<div class="positiv" style="display: none;">
 					<f:for each="{field.cadpositive}" as="cadpositive">
-						<f:image src="{cadpositive.publicUrl}" alt="{cadpositive.altText}" class="img img-responsive" treatIdAsReference="0" />	
+						<f:image src="{cadpositive.publicUrl}" alt="{cadpositive.altText}" class="img img-responsive img-fluid" treatIdAsReference="0" />	
 					</f:for>
 				</div>
 			</f:if>
@@ -64,7 +64,7 @@
 			Farbauswahl unverbindlich Anfragen
 		</a>
 	</div>
-	<div class="hidden">
+	<div class="hidden d-none">
 		<div id="anfrage">
 			<f:cObject typoscriptObjectPath="lib.produktanfrage" />
 		</div>

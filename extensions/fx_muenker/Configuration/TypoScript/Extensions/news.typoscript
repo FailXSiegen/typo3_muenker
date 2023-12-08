@@ -1,7 +1,7 @@
 plugin {
   tx_news {
     settings {
-        link.skipControllerAndAction = 0
+      link.skipControllerAndAction = 0
       list {
         link = 68
         media.image {

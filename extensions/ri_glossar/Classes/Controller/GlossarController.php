@@ -1,6 +1,10 @@
 <?php
 namespace Riconet\RiGlossar\Controller;
 
+use Riconet\RiGlossar\Domain\Repository\GlossarRepository;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Http\ApplicationType;
+use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -38,24 +42,23 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class GlossarController extends ActionController{
 
 	/**
-	 * glossarRepository
-	 *
-	 * @var \Riconet\RiGlossar\Domain\Repository\GlossarRepository
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
-	 */
-	protected $glossarRepository = NULL;
+  * glossarRepository
+  *
+  * @var GlossarRepository
+  */
+ protected $glossarRepository = NULL;
 
 	/**
 	 * action list
 	 *
 	 * @return void
 	 */
-	public function listAction() {
+	public function listAction(): ResponseInterface {
 		$frameworkConfiguration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
         $storagePid = $frameworkConfiguration["persistence"]["storagePid"];
 		$this->view->assign('storagePid', $storagePid);
 		
-		if (TYPO3_MODE === 'BE') {
+		if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()) {
 			$token = GeneralUtility::makeInstance(UriBuilder::class)->buildUriFromRoute('web_RiGlossarManageglossar');
 			$this->view->assign('token', urlencode($token));
 			$this->view->assign('undecodedtoken', $token);
@@ -121,11 +124,12 @@ class GlossarController extends ActionController{
 			}
 		}
 		$this->view->assign('glossars', $splitted);
+  return $this->htmlResponse();
 	}
 
-	public function showAction(Glossar $glossar = NULL) {
+	public function showAction(Glossar $glossar = NULL): ResponseInterface {
 		if ($glossar === null) {
-			$this->forward('list');
+			return new ForwardResponse('list');
 		}
 		
         $glossars = $this->glossarRepository->getSorted();
@@ -139,6 +143,12 @@ class GlossarController extends ActionController{
         }
 
 		$this->view->assign('glossar', $glossar);
+  return $this->htmlResponse();
 	}
+
+ public function injectGlossarRepository(GlossarRepository $glossarRepository): void
+ {
+     $this->glossarRepository = $glossarRepository;
+ }
 
 }

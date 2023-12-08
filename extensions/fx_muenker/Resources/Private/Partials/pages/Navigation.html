@@ -1,11 +1,11 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" id="header-nav" class="navbar navbar-toggleable-sm bg-faded clbg-blue">
-	<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" id="header-nav" class="navbar navbar-toggleable-sm bg-faded clbg-blue rounded">
+	<button type="button" class="navbar-toggler navbar-toggler-right collapse" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
 		<span class="sr-only navbar-toggler-icon">Toggle navigation</span>
-		<i class="fa fa-bars hidden-lg" aria-hidden="true"></i>
+		<i class="fa fa-bars d-lg-none " aria-hidden="true"></i>
 	</button>
     <div class="navbar-collapse">
-      <ul role="menu" id="navbar-collapse-1" class="level-one collapse navbar-nav mr-auto " role="menu">
+      <ul role="menu" id="navbar-collapse-1" class="level-one collapse navbar-nav mr-auto me-auto" role="menu">
           <f:for each="{mainNavigation}" as="menuPage" iteration="iteration">
             <li itemprop="name" class="nav-item layout-{menuPage.layout} {f:if(condition:iteration.isFirst, then:'first')} {f:if(condition:iteration.isLast, then:'last')} {f:if(condition:menuPage.active, then:'active')} {f:if(condition:menuPage.current, then:'current')}">
               <f:if condition="{menuPage.children}">
@@ -27,7 +27,7 @@
                                             {level2.title}
                                     </a>
                                     <f:if condition="{level2.children}">
-                                        <i class="withsub fa fa-caret-down  visible-xs visible-sm" aria-hidden="true"></i>
+                                        <i class="withsub fa fa-caret-down d-md-none" aria-hidden="true"></i>
                                         <ul role="menu" class="level-three">
                                             <f:for each="{level2.children}" as="level3">
                                                 <li itemprop="name" class="layout-{level3.data.layout} {f:if(condition:level3.active, then:'active')}{f:if(condition:level3.current, then:'current')}">
