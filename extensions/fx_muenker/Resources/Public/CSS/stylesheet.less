@@ -517,13 +517,16 @@ body > header.header {
 		margin: 0 auto;
         width:100%;
 		@media(max-width:991px) {
+      &.collapsed {
+        display:none;
+      }
 			&.collapsing {
 				display:block;
 				width:100%;
 			}
 			&.collapse {
-				display:none;
-				&.in {
+				
+				&.show {
 					display: block;
                     @media(max-width:991px) {
                         max-height:80vh;

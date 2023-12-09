@@ -1133,19 +1133,19 @@ body > header.header .phone.h2 {
   width: 100%;
 }
 @media (max-width: 991px) {
+  #header-nav .level-one.collapsed {
+    display: none;
+  }
   #header-nav .level-one.collapsing {
     display: block;
     width: 100%;
   }
-  #header-nav .level-one.collapse {
-    display: none;
-  }
-  #header-nav .level-one.collapse.in {
+  #header-nav .level-one.collapse.show {
     display: block;
   }
 }
 @media (max-width: 991px) and (max-width: 991px) {
-  #header-nav .level-one.collapse.in {
+  #header-nav .level-one.collapse.show {
     max-height: 80vh;
     overflow: auto;
     display: block;
