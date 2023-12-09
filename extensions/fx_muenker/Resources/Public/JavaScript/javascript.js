@@ -11,7 +11,32 @@ document.addEventListener('wheel', (evt) => {
   passive: true
 })
 $(function () {
-
+  function addThicknessToForm(element) {
+    $('#powermail_field_dicke')
+    .find('option')
+    .remove()
+    .end()
+  if($(element).data('thickness')) {
+    let strengthlist = element.data('thickness').split('|')
+    $.each(strengthlist, function (key, value) {
+      $('#powermail_field_dicke')
+        .append($('<option>', {value: value})
+          .text(value))
+    })
+  } else {
+    let strengthlist = []
+    $('.produktbox li:contains("mm")').each(function () {
+      if (element.html().endsWith('mm') && element.html().length < 9) {
+        strengthlist.push(element.html())
+      }
+    })
+    $.each(strengthlist, function (key, value) {
+      $('#powermail_field_dicke')
+        .append($('<option>', {value: value})
+          .text(value))
+    })
+  }
+  }
   if ($('.produktbox').length > 0) {
     $('#powermail_field_farbauswahl').attr('value', 'Farbe:' + $('#article_id_0').html())
     $('.powermail_fieldwrap_ihrefarbauswahl').html('<span class="color-box" style="' + $('#article_id_0').attr('style') + '"></span> Farbe:' + $('#article_id_0').html())
@@ -21,32 +46,9 @@ $(function () {
       $('.powermail_fieldwrap_ihrefarbauswahl').html('<span class="color-box" style="' + $(this).attr('style') + '"></span>  Farbe:' + $(this).html())
     })
 
-
+    addThicknessToForm($('.colors li:first-child'));
     $('.colors li').click(function () {
-      $('#powermail_field_dicke')
-        .find('option')
-        .remove()
-        .end()
-      if($(this).data('thickness')) {
-        let strengthlist = $(this).data('thickness').split('|')
-        $.each(strengthlist, function (key, value) {
-          $('#powermail_field_dicke')
-            .append($('<option>', {value: value})
-              .text(value))
-        })
-      } else {
-        let strengthlist = []
-        $('.produktbox li:contains("mm")').each(function () {
-          if ($(this).html().endsWith('mm') && $(this).html().length < 9) {
-            strengthlist.push($(this).html())
-          }
-        })
-        $.each(strengthlist, function (key, value) {
-          $('#powermail_field_dicke')
-            .append($('<option>', {value: value})
-              .text(value))
-        })
-      }
+      addThicknessToForm($(this));
     })
 
     $('.fancybox').fancybox({
