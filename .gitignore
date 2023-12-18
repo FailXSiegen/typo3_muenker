@@ -46,6 +46,7 @@ build/
 /var
 /bin
 /vendor
+Vendor*
 #
 # Ignore common TYPO3 CMS files/directories
 /fileadmin
@@ -63,7 +64,7 @@ build/
 
 !/public/typo3conf/AdditionalConfiguration.php
 
-!/public/assets
+!/public/_migrated_assets
 /blaetterkataloge
 
 # Node.js

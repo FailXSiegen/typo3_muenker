@@ -41,22 +41,22 @@
 			<div id="setting-container" style="{f:if(condition:hideForm,then:'display:none',else:'')}">
 				<div class="settings">
 					<div class="row form-horizontal">
-						<div class="col-xs-6">
+						<div class="col-xs-6 col-6">
 							<div class="form-group">
-								<label for="searchWord" class="col-xs-4 control-label">
+								<label for="searchWord" class="col-xs-4 col-4 control-label">
 									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.searchWord" />
 								</label>
 
-								<div class="col-xs-8">
+								<div class="col-xs-8 col-8">
 									<f:form.textfield property="searchWord" id="searchWord" class="form-control t3js-clearable" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="timeRestriction" class="col-xs-4 control-label">
+								<label for="timeRestriction" class="col-xs-4 col-4 control-label">
 									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.timeRange" />
 								</label>
 
-								<div class="col-xs-8">
+								<div class="col-xs-8 col-8">
 									<div class="input-group">
 										<f:form.textfield type="datetime" property="timeRestriction" id="timeRestriction" class="form-control t3js-datetimepicker t3js-clearable" data="{date-type:'datetime',date-offset:'0'}" />
 										<span class="input-group-btn">
@@ -68,10 +68,10 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="timeRestriction" class="col-xs-4 control-label">
+								<label for="timeRestriction" class="col-xs-4 col-4 control-label">
 									-
 								</label>
-								<div class="col-xs-8">
+								<div class="col-xs-8 col-8">
 									<div class="input-group">
 										<f:form.textfield type="datetime" property="timeRestrictionHigh" id="timeRestrictionHigh" class="form-control t3js-datetimepicker t3js-clearable" data="{date-type:'datetime',date-offset:'0'}" />
 										<span class="input-group-btn">
@@ -83,11 +83,11 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="topNewsRestriction" class="col-xs-4 control-label">
+								<label for="topNewsRestriction" class="col-xs-4 col-4 control-label">
 									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction" />
 								</label>
 
-								<div class="col-xs-8">
+								<div class="col-xs-8 col-8">
 									<f:form.select property="topNewsRestriction" class="form-control" options="{
 						0:'',
 						1:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction.1\')}',
@@ -97,7 +97,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="hidden" class="col-xs-4 control-label">
+								<label for="hidden" class="col-xs-4 col-4 control-label">
 									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.filter.hidden" />
 								</label>
 

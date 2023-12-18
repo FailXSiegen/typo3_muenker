@@ -3,8 +3,11 @@
 <div class="dropdown languages">
     <v:page.languageMenu layout="flag,name" order="0,3,4" defaultLanguageLabel="Deutsch" hideNotTranslated="1"
         tagName="" tagNameChildren="" defaultIsoFlag="de" flagImageType="png" as="languageMenu">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="true">
+        <button 
+            class="btn btn-default dropdown-toggle" 
+            type="button" id="langDropdown" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
             <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
                 <f:if condition="{langmenu.current}">
                     <f:image
@@ -14,10 +17,10 @@
             </f:for>
             <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu" aria-labelledby="langDropdown">
             <f:for each="{languageMenu}" as="langmenu" iteration="langiter">
                 <li class="{f:if(condition:'{langmenu.current}', then:' act', else:' inact')}">
-                    <a href="{langmenu.url}">
+                    <a class="dropdown-item" href="{langmenu.url}">
                         <f:image
                             src="EXT:fx_muenker/Resources/Public/Images/Flags/{langmenu.flagIdentifier -> f:format.case(mode: 'upper')}.png"
                             width="16" />
