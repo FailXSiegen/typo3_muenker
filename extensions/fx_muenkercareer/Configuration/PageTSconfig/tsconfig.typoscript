@@ -1,15 +1,79 @@
 RTE.default.buttons.link.queryParametersSelector.enabled = 1
 
 ##id storagepage of gridlayout
-TCEFORM.pages.backend_layout.PAGE_TSCONFIG_ID = 630
-TCEFORM.pages.backend_layout_next_level.PAGE_TSCONFIG_ID = 630
-
+TCEFORM.pages.backend_layout.PAGE_TSCONFIG_ID = 1353
+TCEFORM.pages.backend_layout_next_level.PAGE_TSCONFIG_ID = 1353
+mod.web_layout.BackendLayouts {
+  career {
+    title = Karriere
+    config {
+      backend_layout {
+        colCount = 2
+        rowCount = 5
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Kopf
+                colspan = 2
+                colPos = 2
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Links
+                colPos = 0
+              }
+              2 {
+                name = Rechts
+                colPos = 1
+              }
+            }
+          }
+          3 {
+            columns {
+              1 {
+                name = Links
+                colPos = 5
+              }
+              2 {
+                name = Rechts
+                colPos = 6
+              }
+            }
+          }
+          4 {
+            columns {
+              1 {
+                name = Inhalt
+                colspan = 2
+                colPos = 3
+              }
+            }
+          }
+          5 {
+            columns {
+              1 {
+                name = Fußbreich (wird vererbt)
+                colspan = 2
+                colPos = 4
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ##hide no backend layout label
 TCEFORM.pages.backend_layout_next_level.removeItems= -1
 TCEFORM.pages.backend_layout.removeItems= -1
 
 TCEFORM {
   tt_content {
+
     frame_class {
       label = Background
       removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
@@ -19,8 +83,10 @@ TCEFORM {
       addItems {
         bg-white = Weiß
         clbg-lightgray = Grau
+        bg-blue-80 = Blau Transparent
       }
 		}
+
     layout {
       altLabels {
         0 = Default
@@ -140,14 +206,14 @@ TCEFORM.tt_address.latitude.disabled = 1
 TCEFORM.tt_address.longitude.disabled = 1
 
 TCEMAIN.linkHandler {
-    tx_riglossar_domain_model_glossar {
-	  handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
-	  label = Glossar
-	  configuration {
-	    table = tx_riglossar_domain_model_glossar
-	    storagePid = 740
-		hidePageTree = 1
-	  }
+  tx_riglossar_domain_model_glossar {
+    handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+    label = Glossar
+    configuration {
+      table = tx_riglossar_domain_model_glossar
+      storagePid = 740
+      hidePageTree = 1
+    }
 	  scanBefore = page
 	}
 	tx_news_domain_model_news {
@@ -156,35 +222,8 @@ TCEMAIN.linkHandler {
 	  configuration {
 	    table = tx_news_domain_model_news
 	    storagePid = 850
-		hidePageTree = 1
+		  hidePageTree = 1
 	  }
 	  scanBefore = page
 	}
-}
-tx_gridelements {
-    # boolean; Usually if the ID of the TSconfig is the same like the record ID of grid elements,
-    # the configuration of the TSconfig overrides the record configuration recursively (!).
-    # If this option is set the record configuration overrides the TSconfig.
-    #overruleRecords = 1
-    # string; With this option you can disable single layouts. Use the record or TSconfig ID.
-    #excludeLayoutIds = 3,slider
-
-    setup {
-        slider {
-            title = Slider
-            description = Obsoleter Slider!
-            iconIdentifier = tx-bootstrapgrids-accordion
-            frame = 2
-            topLevelLayout = 0
-            config {
-                colCount = 1
-                rowCount = 1
-                rows.1.columns.1 {
-                    name = Slider-Elemente
-                    colPos = 101
-                }
-            }
-            #flexformDS = FILE:EXT:bootstrap_grids/Configuration/FlexForm/flexform_accordion.xml
-        }
-    }
 }

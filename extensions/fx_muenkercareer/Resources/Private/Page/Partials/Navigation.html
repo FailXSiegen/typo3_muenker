@@ -1,0 +1,23 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<nav class=" pb-0 navbar navbar-expand-md navbar-light bg-transparent">
+    <div class="navbar-brand">
+      <f:render partial="Logo" arguments="{_all}" />
+    </div>
+	  <button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="ms-md-10 align-self-md-end collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <f:for each="{mainNavigation}" as="menuPage" iteration="iteration">
+            <li itemprop="name" class="nav-item layout-{menuPage.layout} {f:if(condition:iteration.isFirst, then:'first')} {f:if(condition:iteration.isLast, then:'last')}">
+                <a title="{menuPage.title}"
+                    aria-label="Lese mehr über {menuPage.title}"
+                    itemprop="url" href="{menuPage.link}"
+                    class="nav-link text-uppercase fw-bold pb-3 px-3 me-md-3 {f:if(condition:'{menuPage.active} || {menuPage.current}', then:'active bg-primary text-white')}">
+                        {menuPage.title}
+                </a>
+              </li>
+            </f:for>
+        </ul>
+    </div>
+</nav>

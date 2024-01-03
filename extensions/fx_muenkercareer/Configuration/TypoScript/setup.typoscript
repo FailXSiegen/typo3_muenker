@@ -1,0 +1,83 @@
+
+config {
+  compressJs = 0
+  compressCss = 0
+  concatenateJs = 0
+  concatenateCss = 0
+}
+
+tt_content.gridelements_pi1 {
+    templateRootPaths {
+        30 = EXT:fx_muenkercareer/Resources/Private/Content/Templates/
+    }
+    partialRootPaths {
+        30 = EXT:fx_muenkercareer/Resources/Private/Content/Partials/
+    }
+}
+
+lib {
+    contentElement {
+        templateRootPaths {
+            20 = EXT:fx_muenkercareer/Resources/Private/Content/Templates/
+        }
+        partialRootPaths {
+            20 = EXT:fx_muenkercareer/Resources/Private/Content/Partials/
+        }
+        layoutRootPaths {
+            20 = EXT:fx_muenkercareer/Resources/Private/Content/Layouts/
+        }
+    }
+    fluidContent < .contentElement
+
+    getLayoutFromElement = COA
+    getLayoutFromElement {
+        5 = LOAD_REGISTER
+        5 {
+            contentUid = TEXT
+            contentUid.current = 1
+        }
+        20 = TEXT
+        20 {
+            data = DB:tt_content:{register:contentUid}:layout
+            data.insertData = 1
+        }
+        90 = RESTORE_REGISTER
+    }
+}
+
+
+
+page {
+  includeCSS {
+    bootstrap = EXT:fx_muenkercareer/Resources/Public/StyleSheet/bootstrap.css
+    fontawesome = EXT:fx_muenker/Resources/Public/Vendor/font-awesome/css/font-awesome.min.css
+    fancy  >
+    owl1 >
+    bootstraptheme >
+
+    career = EXT:fx_muenkercareer/Resources/Public/StyleSheet/career.css
+  }
+  includeJSLibs {
+    jquery >
+    popper = EXT:fx_muenker/Resources/Public/Vendor/@popperjs/core/dist/umd/popper.js
+    bootstrap = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/js/bootstrap.min.js
+    tether >
+  }
+  includeJSFooter {
+    owl >
+    fancy >
+    jcarousel >
+    farbwechsler >
+    custom >
+  }
+  10 {
+    file >
+    file = EXT:fx_muenkercareer/Resources/Private/Page/Templates/Career.html
+    layoutRootPaths {
+      20 = EXT:fx_muenkercareer/Resources/Private/Page/Layouts/
+    }
+    partialRootPaths {
+      20 = EXT:fx_muenkercareer/Resources/Private/Page/Partials/
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div itemscope="" itemtype="http://schema.org/Organization" class="logo">
+      <f:for each="{field.logo}" as="logo">
+        <f:link.typolink parameter="{logo.link}" additionalAttributes="{itemprop:'url',aria-label:'Zur Startseite'}">
+            <span itemprop="logo">  
+                <f:image src="{logo.uid}" alt="{logo.altText}" class="img img-responsive" treatIdAsReference="1" />	
+            </span>
+        </f:link.typolink>
+      </f:for>  
+  </div>
+</f:section>

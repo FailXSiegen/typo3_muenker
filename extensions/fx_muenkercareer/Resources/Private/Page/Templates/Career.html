@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+	<f:layout name="Career" />
+	<f:section name="Content">
+		<div class="container-fluid">
+			<f:cObject 
+				typoscriptObjectPath="lib.dynamicContent" 
+				data="{colPos:'2'}" />
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-sm-6">
+					<f:cObject 
+						typoscriptObjectPath="lib.dynamicContent" 
+						data="{colPos:'0'}" />
+				</div>
+				<div class="col-12 col-sm-6">
+					<f:cObject 
+						typoscriptObjectPath="lib.dynamicContent" 
+						data="{colPos:'1'}" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 col-sm-6">
+					<f:cObject 
+						typoscriptObjectPath="lib.dynamicContent" 
+						data="{colPos:'5'}" />
+				</div>
+				<div class="col-12 col-sm-6">
+					<f:cObject 
+						typoscriptObjectPath="lib.dynamicContent" 
+						data="{colPos:'6'}" />
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<f:cObject 
+				typoscriptObjectPath="lib.dynamicContent" 
+				data="{colPos:'3'}" />
+		</div>
+	</f:section>
+</html>

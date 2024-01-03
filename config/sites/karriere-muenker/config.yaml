@@ -1,0 +1,22 @@
+base: 'https://karriere.muenker.com'
+baseVariants:
+  -
+    base: 'https://karriere-muenker.ddev.site/'
+    condition: 'getenv("TYPO3_CONTEXT") == "Development"'
+disableStaticFileCache: false
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de
+    direction: ltr
+    flag: de
+    websiteTitle: ''
+rootPageId: 1353
+websiteTitle: ''

@@ -24,6 +24,7 @@
 	},
 	"require": {
 		"failx/fx-muenker":"@dev",
+		"failx/fx-muenkercareer":"@dev",
 		"failx/commerce-muenker":"@dev",
 		"riconet/ri-glossar":"@dev",
 		"fluidtypo3/vhs": "^7.0",

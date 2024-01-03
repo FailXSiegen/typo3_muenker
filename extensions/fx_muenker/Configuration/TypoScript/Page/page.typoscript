@@ -23,6 +23,9 @@ page {
       4 = TEXT
       4.value = EXT:fx_muenker/Resources/Private/Templates/pages/Products.html
 
+      5 = TEXT
+      5.value = EXT:fx_muenker/Resources/Private/Templates/pages/Career.html
+
       default = TEXT
       default.value = EXT:fx_muenker/Resources/Private/Templates/pages/Default.html
     }

@@ -1,0 +1,76 @@
+@import "variables";
+
+@import "../../../../Public/Vendor/bootstrap/scss/functions";
+@import "../../../../Public/Vendor/bootstrap/scss/variables";
+@import "../../../../Public/Vendor/bootstrap/scss/variables-dark";
+@import "../../../../Public/Vendor/bootstrap/scss/maps";
+@import "../../../../Public/Vendor/bootstrap/scss/mixins";
+@import "../../../../Public/Vendor/bootstrap/scss/utilities";
+
+body>header.header {
+    background: white;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 12px;
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        display: block;
+        background-repeat: repeat-x;
+        background-image: url('../Images/Trapezblech-Linie.png');
+        z-index: -1;
+    }
+}
+@include media-breakpoint-up(md) {
+    .nav-link {
+        position: relative;
+        background-color: $lightblue;
+        &:after {
+            content: '';
+            width: 100%;
+            height: 12px;
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            display: block;
+            background-color: $lightblue;
+        }
+    }
+    .nav-link.active {
+        
+        &:after {
+            content: '';
+            width: 100%;
+            height: 12px;
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            display: block;
+            background-color: $blue;
+        }
+    }
+}
+main {
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url('../Images/Grafik_Hintergrund_Schule.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 992px;
+        z-index: -1;
+    }
+}
+.bg-blue-80 {
+    background-color: rgba($lightblue, .8);
+}

@@ -1,0 +1,107 @@
+
+
+
+// FONT SIZES
+$fsdefault: 14px;
+$fsh1: 24px;
+$fsh2: 20px;
+$fsh3: 18px;
+$fsh4: 16px;
+$fsinput: 16px;
+
+$navheight: 48px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1240px,
+  xxl: 1367px,
+);
+
+$card-cap-bg: transparent;
+$card-bg: transparent;
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+  9: $spacer * 7,
+  10: $spacer * 8
+);
+
+
+$white: #fff;
+$black: #000;
+$blue: #082b53;
+$lightblue: #CCD5DE;
+$red: #e21f2d;
+$gray-300: #dddddd;
+$gray-600: #707070;
+$gray-800: #2c2c2c;
+$border-radius: .375rem;
+$light: white;
+$dark: black;
+$lightgrey: #efefef;
+$darkorange:#C58A1F;
+$orange: #DC9A29;
+
+// scss-docs-start color-variables
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+// scss-docs-end colors-map
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         #fff;
+$dark:          #000;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "lightgrey":  $lightgrey,
+);
+$variable-prefix:  bs-;
+$prefix: $variable-prefix;
+$navbar-light-color: rgba(var(--#{$prefix}emphasis-color-rgb), 1);
+$navbar-light-hover-color: rgba(var(--#{$prefix}emphasis-color-rgb), 1);
