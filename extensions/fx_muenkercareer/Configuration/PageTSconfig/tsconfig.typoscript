@@ -4,6 +4,25 @@ RTE.default.buttons.link.queryParametersSelector.enabled = 1
 TCEFORM.pages.backend_layout.PAGE_TSCONFIG_ID = 1353
 TCEFORM.pages.backend_layout_next_level.PAGE_TSCONFIG_ID = 1353
 mod.web_layout.BackendLayouts {
+  content {
+    title = Inhalt
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Inhalt
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   career {
     title = Karriere
     config {
@@ -115,6 +134,12 @@ TCEFORM {
         3 = H3
         4 = H4
         5 = H5
+      }
+      addItems {
+        21 = H1 Chantal 
+        22 = H2 Chantal 
+        23 = H3 Chantal 
+        24 = H4 Chantal 
       }
     }
   }  

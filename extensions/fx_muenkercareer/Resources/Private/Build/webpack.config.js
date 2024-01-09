@@ -124,6 +124,7 @@ module.exports = {
     // Path to your entry point. From this file Webpack will begin its work
     entry: {  
         'bootstrap' : './src/scss/bootstrap.scss',
+        'fonts' : './src/scss/fonts.scss',
         'career': './src/scss/career.scss',
     },
 

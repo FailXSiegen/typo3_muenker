@@ -67,3 +67,52 @@ main:after {
 .bg-blue-80 {
   background-color: rgba(204, 213, 222, 0.8);
 }
+
+.f-chantal {
+  font-family: "Chantal";
+}
+
+header h1, header h2, header h3, header h4, header h5, header h6 {
+  display: inline-block;
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+  margin-bottom: 1.5rem;
+}
+.accordion-item > .accordion-header {
+  background: none;
+}
+.accordion-item > .accordion-header .accordion-button {
+  background-color: #efefef;
+  color: #082b53;
+}
+.accordion-item .accordion-button:before {
+  background: none;
+  display: inline-block;
+  font-family: "FontAwesome";
+  content: "\f054";
+  transform: rotate(90deg);
+  transition: transform 0.2s ease-in-out;
+}
+.accordion-item .accordion-button.collapsed:before {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.tx-powermail .whatsapp {
+  padding-right: 220px;
+  position: relative;
+}
+.tx-powermail .whatsapp:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 120px;
+  height: 100%;
+  content: "";
+  background-image: url("../Images/WhatsApp_Logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

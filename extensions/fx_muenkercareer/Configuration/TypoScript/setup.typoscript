@@ -14,6 +14,16 @@ tt_content.gridelements_pi1 {
         30 = EXT:fx_muenkercareer/Resources/Private/Content/Partials/
     }
 }
+plugin.tx_powermail {
+  view {
+    templateRootPaths{
+      30 = EXT:fx_muenkercareer/Resources/Private/Extensions/Powermail/Templates/
+    }
+    partialRootPaths {
+      30 = EXT:fx_muenkercareer/Resources/Private/Extensions/Powermail/Partials/
+    }
+  }
+}
 
 lib {
     contentElement {
@@ -54,7 +64,7 @@ page {
     fancy  >
     owl1 >
     bootstraptheme >
-
+    fonts = EXT:fx_muenkercareer/Resources/Public/StyleSheet/fonts.css
     career = EXT:fx_muenkercareer/Resources/Public/StyleSheet/career.css
   }
   includeJSLibs {
