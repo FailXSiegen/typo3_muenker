@@ -1,0 +1,59 @@
+# EXT:fx_muenkercareer/Configuration/RTE/Default.yaml
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+    - { resource: "EXT:rte_ckeditor_automails/Configuration/RTE/Plugin.yaml" }
+
+# Minimal configuration for the editor
+editor:
+  config:
+    contentsCss: "EXT:fx_muenkercareer/Resources/Public/StyleSheet/rte.css"
+    stylesSet:
+      - { name: "Schrift Chantal", element: ['h1','h2','h3','h4','h5'] , attributes: { class: "f-chantal"} }
+
+    format_tags: "p;h2;h3;h4;h5;div;span"
+    format_span: { name : 'Span', element : 'span'}
+    toolbarGroups:
+      - { name: basicstyles, groups: [ basicstyles, cleanup ] }
+      - { name: clipboard, groups: [ clipboard, undo ] }
+      - { name: editing, groups: [ find, selection, spellchecker, editing ] }
+      - { name: links, groups: [ links ] }
+      - { name: insert, groups: [ insert ] }
+      - { name: forms, groups: [ forms ] }
+      - { name: tools, groups: [ tools ] }
+      - { name: others, groups: [ others ] }
+      - "/"
+      - { name: paragraph, groups: [ list, indent, blocks, align, bidi, paragraph ] }
+      - { name: styles, groups: [ styles ] }
+      - { name: document, groups: [ mode, document, doctools ] }
+      - { name: about, groups: [ about ] }
+      - { name: colors, groups: [ colors ] }
+    
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - font
+      - find
+      - bidi
+
+    removeButtons:
+      - Scayt
+      - Outdent
+      - Indent
+      - About
+      - Font
+      - FontSize
+
+    removePlugins:
+      - image
+
+processing:
+  allowTags:
+    - s
+    - u

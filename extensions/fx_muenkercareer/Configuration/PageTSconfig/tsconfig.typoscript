@@ -1,4 +1,4 @@
-RTE.default.buttons.link.queryParametersSelector.enabled = 1
+RTE.default.preset = muenkercareer
 
 ##id storagepage of gridlayout
 TCEFORM.pages.backend_layout.PAGE_TSCONFIG_ID = 1353
@@ -171,50 +171,13 @@ tx_news.templateLayouts {
   1 = Default
   2 = 2 Spaltig
 }
-RTE.default.buttons.link.page.properties.target.default = _self
-RTE.default {
-  buttons.link.properties.class.allowedClasses := addToList(cta, btn btn-primary, btn btn-info, btn btn-default) 
-  proc.allowedClasses := addToList(cta, btn btn-primary, btn btn-info, btn btn-default) 
-  proc.allowedClasses = external-link, external-link-new-window, internal-link, internal-link-new-window, download, mail, 
-  proc.allowedClasses := addToList(text-left, text-center, text-right, text-justify)
-  proc.allowedClasses := addToList(csc-frame-frame1, csc-frame-frame2)
-  proc.allowedClasses := addToList(component-items, action-items)
-  proc.allowedClasses := addToList(component-items-ordered, action-items-ordered)
-  proc.allowedClasses := addToList(important, name-of-person, detail)
-  proc.allowedClasses := addToList(indent)
-  buttons.blockstyle.tags.div.allowedClasses = text-left, text-center, text-right, text-justify
-  buttons.blockstyle.tags.div.allowedClasses := addToList(csc-frame-frame1, csc-frame-frame2)
-  buttons.blockstyle.tags.table.allowedClasses = csc-frame-frame1, csc-frame-frame2
-  buttons.blockstyle.tags.td.allowedClasses = text-left, text-center, text-right, text-justify
-  buttons.textstyle.tags.span.allowedClasses = important, name-of-person, detail
-  disableAlignmentFieldsetInTableOperations = 1
-  disableSpacingFieldsetInTableOperations = 1
-  disableColorFieldsetInTableOperations = 1
-  disableLayoutFieldsetInTableOperations = 1
-}
-RTE.classesAnchor.newink { 
-  name = cta
-}
-RTE.default {
-	#angepasste CSS Datei in fileadmin speichern
-	contentCSS = fileadmin/riconet/css/rte.css
-	buttons.link.properties.class.allowedClasses = btn-default,btn-primary
-	buttons.link.page.properties.class.default = 
-	buttons.link.url.properties.class.default =
-	buttons.link.file.properties.class.default = 
-	buttons.link.mail.properties.class.default = 
-	buttons.link.dialogueWindow.width = 800
 
-}
 tx_news.module {
 	preselect {
 		sortingField = datetime
 		sortingDirection = desc
 	}
 }
-RTE.default.buttons.link.dialogueWindow.width = 1280
-RTE.default.buttons.link.dialogueWindow.height = 1280
-
 TCEMAIN.table.pages {
     disablePrependAtCopy = 1
     disableHideAtCopy = 1

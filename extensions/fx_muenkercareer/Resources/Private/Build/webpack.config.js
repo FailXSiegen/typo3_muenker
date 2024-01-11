@@ -126,6 +126,7 @@ module.exports = {
         'bootstrap' : './src/scss/bootstrap.scss',
         'fonts' : './src/scss/fonts.scss',
         'career': './src/scss/career.scss',
+        'rte': './src/scss/rte.scss',
     },
 
     // Path and filename of your result bundle.
