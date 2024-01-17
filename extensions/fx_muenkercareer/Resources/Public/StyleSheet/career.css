@@ -4,7 +4,7 @@
 body > header.header {
   background: white;
 }
-body > header.header:after {
+body > header.header:before, body > header.header:after {
   content: "";
   width: 100%;
   height: 12px;
@@ -14,7 +14,12 @@ body > header.header:after {
   display: block;
   background-repeat: repeat-x;
   background-image: url("../Images/Trapezblech-Linie.png");
-  z-index: -1;
+  z-index: 5;
+  pointer-events: none;
+}
+body > header.header:after {
+  background-image: url("../Images/Trapezblech-Linie_white.png");
+  z-index: 8;
 }
 
 @media (min-width: 768px) {
@@ -31,24 +36,19 @@ body > header.header:after {
     left: 0;
     display: block;
     background-color: #CCD5DE;
+    z-index: 6;
   }
   .nav-link.active:after {
-    content: "";
-    width: 100%;
-    height: 12px;
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    display: block;
     background-color: #082b53;
   }
 }
 main {
   position: relative;
   overflow: hidden;
-  min-height: 50vh;
+  min-height: calc(100vh - 135px - 142px);
   margin-bottom: 0;
   padding-bottom: 20px;
+  margin-top: 135px;
 }
 main:after {
   content: "";
@@ -58,6 +58,7 @@ main:after {
   bottom: 0;
   left: 0;
   background-image: url("../Images/Grafik_Hintergrund_Schule.svg");
+  scale: 1.5;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 992px;
@@ -115,4 +116,20 @@ header h1, header h2, header h3, header h4, header h5, header h6 {
   background-image: url("../Images/WhatsApp_Logo.png");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav {
+    max-width: 500px;
+  }
+  .navbar-expand-md .navbar-nav .nav-item {
+    flex: 0 0 150px;
+    text-align: center;
+  }
+  .navbar-expand-md .navbar-nav .nav-item a {
+    text-wrap: nowrap;
+  }
+  .navbar-expand-md .navbar-nav .nav-item.last a {
+    margin-right: 0 !important;
+  }
 }

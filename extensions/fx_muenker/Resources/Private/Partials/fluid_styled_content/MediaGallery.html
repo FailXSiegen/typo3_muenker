@@ -97,14 +97,23 @@
 </f:section>
 
 <f:section name="image">
+	<f:variable name="imageStyle" value="{column.media.properties.image_style}" />
+    <f:if condition="{file.originalResource.properties.image_style}">
+        <f:variable name="imageStyle" value="{column.media.originalResource.properties.image_style}" />
+    </f:if>
 	<picture>
-		<source media="(min-width: 1600px)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'1600m',cropVariant:'default')}">
-		<source media="(max-width: 1199px) and (min-width:992px)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',maxWidth:'1200m',cropVariant:'desktop-md')}">
-		<source media="(max-width: 991px) and (orientation:portrait)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'900m',cropVariant:'tablet-portrait')}">
-		<source media="(max-width: 991px) and (orientation:landscape)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'900m',cropVariant:'tablet-landscape')}">
 		<source media="(max-width: 767px) and (orientation:portrait)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}">
 		<source media="(max-width: 767px) and (orientation:landscape)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-landscape')}">
-		<f:image treatIdAsReference="1" class="img img-responsive img-fluid" src="{column.media.uid}" title="{column.media.title}" alt="{column.media.alternative}" crop="{image.crop}" />
+		<source media="(max-width: 991px) and (orientation:portrait)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'900m',cropVariant:'tablet-portrait')}">
+		<source media="(max-width: 991px) and (orientation:landscape)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',width:'900m',cropVariant:'tablet-landscape')}">
+		<source media="(max-width: 1199px) and (min-width:992px)" srcset="{f:uri.image(src:'{column.media.uid}',treatIdAsReference:'1',maxWidth:'1200m',cropVariant:'desktop-md')}">
+		<f:image
+			treatIdAsReference="1" 
+			class="img img-responsive img-fluid {imageStyle}" 
+			src="{column.media.uid}" 
+			title="{column.media.title}" 
+			alt="{column.media.alternative}" 
+			crop="{image.crop}" />
 	</picture>
 </f:section>
 </html>

@@ -9,7 +9,7 @@
 
 body>header.header {
     background: white;
-    &:after {
+    &:before, &:after {
         content: '';
         width: 100%;
         height: 12px;
@@ -19,7 +19,12 @@ body>header.header {
         display: block;
         background-repeat: repeat-x;
         background-image: url('../Images/Trapezblech-Linie.png');
-        z-index: -1;
+        z-index: 5;
+        pointer-events: none;
+    }
+    &:after{
+        background-image: url('../Images/Trapezblech-Linie_white.png');
+        z-index: 8;
     }
 }
 @include media-breakpoint-up(md) {
@@ -35,18 +40,11 @@ body>header.header {
             left: 0;
             display: block;
             background-color: $lightblue;
+            z-index: 6;
         }
     }
     .nav-link.active {
-        
         &:after {
-            content: '';
-            width: 100%;
-            height: 12px;
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            display: block;
             background-color: $blue;
         }
     }
@@ -54,9 +52,10 @@ body>header.header {
 main {
     position: relative;
     overflow: hidden;
-    min-height: 50vh;
+    min-height: calc(100vh - 135px - 142px);
     margin-bottom: 0;
     padding-bottom: 20px;
+    margin-top: 135px;
     &:after {
         content: '';
         width: 100%;
@@ -65,9 +64,11 @@ main {
         bottom: 0;
         left: 0;
         background-image: url('../Images/Grafik_Hintergrund_Schule.svg');
+        scale: 1.5;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 992px;
+
         z-index: -1;
     }
 }
@@ -124,6 +125,21 @@ header {
             background-image: url('../Images/WhatsApp_Logo.png');
             background-size: contain;
             background-repeat: no-repeat;
+        }
+    }
+}
+@include media-breakpoint-up(md) {
+    .navbar-expand-md .navbar-nav {
+        max-width:500px;
+        .nav-item {
+            flex: 0 0 150px;
+            text-align: center;
+            a {
+                text-wrap: nowrap;
+            }
+            &.last a {
+                margin-right: 0 !important;
+            }
         }
     }
 }

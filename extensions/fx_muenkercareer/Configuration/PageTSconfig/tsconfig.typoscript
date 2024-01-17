@@ -215,3 +215,18 @@ TCEMAIN.linkHandler {
 	  scanBefore = page
 	}
 }
+
+tx_gridelements {
+   setup {
+      # mixed; This will be the layout ID. It can be a string or a integer.
+      2cols {
+          flexformDS = FILE:EXT:fx_muenkercareer/Configuration/FlexForm/flexform_2col.xml
+      }
+      3cols {
+          flexformDS = FILE:EXT:fx_muenkercareer/Configuration/FlexForm/flexform_3col.xml
+      }
+      4cols {
+          flexformDS = FILE:EXT:fx_muenkercareer/Configuration/FlexForm/flexform_4col.xml
+      }
+   }
+}
