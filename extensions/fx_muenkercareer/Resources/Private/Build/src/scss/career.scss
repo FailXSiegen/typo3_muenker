@@ -119,12 +119,14 @@ header {
             position: absolute;
             top: 0;
             right: 30px;
-            width: 120px;
+            width: 150px;
             height: 100%;
+            min-height: 180px;
             content:'';
-            background-image: url('../Images/WhatsApp_Logo.png');
+            background-image: url('../Images/WhatsApp_Logo.svg');
             background-size: contain;
             background-repeat: no-repeat;
+            background-position: center center;
         }
     }
 }
@@ -142,4 +144,7 @@ header {
             }
         }
     }
+}
+.ce-column + .ce-column {
+    margin-left: 1.5rem;
 }

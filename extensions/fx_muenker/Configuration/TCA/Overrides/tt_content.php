@@ -32,11 +32,43 @@ $ricofluidextendTtContent = [
 			'size' => '1',
             'foreign_table' => 'tx_commercemuenker_color',
         ],
-    ]
+    ],
+    'image_gallery' => [
+        'label' => 'Bilder als Gallerie anzeigen (responsive Slider)',
+        'config' => [
+            'type' => 'check',
+        ]
+    ],
+    'gallery_style' => [
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                0 => [
+                    0 => 'Ohne Modifikation',
+                    1 => '',
+                ],
+                1 => [
+                    0 => 'Wilde Anordnung',
+                    1 => 'thumb-wild',
+                ]
+            ],
+            'maxitems' => '1',
+        ],
+        'exclude' => '1',
+        'label' => 'Gallerie-Stil'
+    ],
 ];
 
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $ricofluidextendTtContent
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    'tt_content',
+    'gallerySettings',
+    'image_gallery, gallery_style, --linebreak--',
+    'before:imageorient'
 );

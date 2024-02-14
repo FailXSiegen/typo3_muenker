@@ -29,18 +29,15 @@ call_user_func(
                 ],
                 'exclude' => '1',
                 'label' => 'Bild-Stil'
-            ],
+            ],   
         ]);
-
-        $GLOBALS['TCA']['sys_file_reference']['palettes']['imageoverlayPalette']['showitem'] = '
-            title,alternative,
-            --linebreak--,
-            image_style,
-            --linebreak--,
-            description, link,
-            --linebreak--,
-            crop
-            ';
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            $table,
+            'imageoverlayPalette',
+            '--linebreak--,image_style',
+            'after:alternative'
+        );
+       
     },
     'fx_muenker',
     'sys_file_reference'
