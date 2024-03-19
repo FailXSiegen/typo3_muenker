@@ -61,14 +61,17 @@ page {
   includeCSS {
     bootstrap = EXT:fx_muenkercareer/Resources/Public/StyleSheet/bootstrap.css
     fontawesome = EXT:fx_muenker/Resources/Public/Vendor/font-awesome/css/font-awesome.min.css
+    myriadpro = https://use.typekit.net/gwn7jgm.css
+    myriadpro.external = 1
     fancy  >
     owl1 >
     bootstraptheme >
     fonts = EXT:fx_muenkercareer/Resources/Public/StyleSheet/fonts.css
     career = EXT:fx_muenkercareer/Resources/Public/StyleSheet/career.css
+
   }
   includeJSLibs {
-    jquery >
+    jquery = EXT:fx_muenker/Resources/Public/Vendor/jquery/dist/jquery.min.js
     popper = EXT:fx_muenker/Resources/Public/Vendor/@popperjs/core/dist/umd/popper.js
     bootstrap = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/js/bootstrap.min.js
     tether >

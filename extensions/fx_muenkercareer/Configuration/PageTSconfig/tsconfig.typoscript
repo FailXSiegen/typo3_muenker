@@ -140,6 +140,10 @@ TCEFORM {
         22 = H2 Chantal 
         23 = H3 Chantal 
         24 = H4 Chantal 
+        31 = H1 MyriadPro 
+        32 = H2 MyriadPro 
+        33 = H3 MyriadPro 
+        34 = H4 MyriadPro 
       }
     }
   }  

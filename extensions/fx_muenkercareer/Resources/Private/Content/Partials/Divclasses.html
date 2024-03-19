@@ -1,7 +1,7 @@
 <f:spaceless>
     <f:switch expression="{data.layout}">
         <f:case value="1">
-            <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:' ')}" />
+            <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:'container')}" />
             <f:render section="defaultContainer" arguments="{data:'{data}',classname:'{classparameter}'}" />
         </f:case>
         <f:case value="2">
@@ -28,6 +28,6 @@
     </f:switch>
 
 <f:section name="defaultContainer">
-{data.frame_class} {classname} frame-type-{data.CType} {data.background_color} {f:if(condition:data.layout, then: '{data.layout} ')} {data.space_before_class} {data.space_after_class} {data.space_start_class} {data.space_end_class}
+{data.frame_class} {classname} frame-type-{data.CType} {data.background_color} {f:if(condition:data.layout, then: '{data.layout} ')} {data.space_start_class} {data.space_end_class}
 </f:section>
 </f:spaceless>

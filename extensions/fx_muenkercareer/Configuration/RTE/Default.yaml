@@ -11,7 +11,7 @@ editor:
     contentsCss: "EXT:fx_muenkercareer/Resources/Public/StyleSheet/rte.css"
     stylesSet:
       - { name: "Schrift Chantal", element: ['h1','h2','h3','h4','h5'] , attributes: { class: "f-chantal"} }
-
+      - { name: "Schrift MyriadPro", element: ['h1','h2','h3','h4','h5'] , attributes: { class: "f-myriad"} }
     format_tags: "p;h2;h3;h4;h5;div;span"
     format_span: { name : 'Span', element : 'span'}
     toolbarGroups:
@@ -31,9 +31,9 @@ editor:
       - { name: colors, groups: [ colors ] }
     
     justifyClasses:
-      - text-left
+      - text-start
       - text-center
-      - text-right
+      - text-end
       - text-justify
 
     extraPlugins:

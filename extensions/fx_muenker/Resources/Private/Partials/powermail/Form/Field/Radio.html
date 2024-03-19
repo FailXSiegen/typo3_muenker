@@ -6,21 +6,22 @@
 	</label>
 
 	<div class="{settings.styles.framework.fieldWrappingClasses}">
-		<f:for each="{field.modifiedSettings}" as="setting" iteration="index">
-			<div class="{settings.styles.framework.radioClasses} {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}">
-				<label>
-					<f:form.radio
-							property="{field.marker}"
-							value="{setting.value}"
-							checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
-							id="powermail_field_{field.marker}_{index.cycle}"
-							additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field, iteration:index)}"
-							class="powermail_radio" />
+		<div class="{settings.styles.framework.radioClasses} {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}">
+			<f:for each="{field.modifiedSettings}" as="setting" iteration="index">
+				<f:form.radio
+						property="{field.marker}"
+						value="{setting.value}"
+						checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
+						id="powermail_field_{field.marker}_{index.cycle}"
+						additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field, iteration:index)}"
+						class="powermail_radio btn-check" />
+				<label 
+					class="btn btn-outline-primary me-3" 
+					for="powermail_field_{field.marker}_{index.cycle}">
 					<vh:string.escapeLabels>{setting.label}</vh:string.escapeLabels>
 				</label>
-			</div>
-		</f:for>
-
+			</f:for>
+		</div>
 		<f:if condition="{settings.validation.client}">
 			<div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
 		</f:if>
