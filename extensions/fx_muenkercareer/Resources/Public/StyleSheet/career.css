@@ -75,6 +75,7 @@ main:after {
 
 .f-myriad {
   font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
 }
 
 header h1, header h2, header h3, header h4, header h5, header h6 {

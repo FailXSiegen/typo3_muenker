@@ -20,6 +20,7 @@
                         <a title="{menuPage.title}"
                            aria-label="Lese mehr über {menuPage.title}"
                            itemprop="url" href="{menuPage.link}"
+                           {f:if(condition:'{menuPage.data.target}',then:'target="{menuPage.data.target}" rel="noopener"')}
                            class="nav-link ">
                                 {menuPage.title}
                         </a>
@@ -29,6 +30,7 @@
                                 <li itemprop="name" class="layout-{level2.data.layout} {f:if(condition:level2.active, then:'active')}{f:if(condition:level2.current, then:'current')}">
                                     <a itemprop="url"
                                        aria-label="Lese mehr über {level2.title}"
+                                       {f:if(condition:'{level2.data.target}',then:'target="{level2.data.target}" rel="noopener"')}
                                        title="{level2.title}"
                                        href="{level2.link}">
                                             {level2.title}
@@ -40,6 +42,7 @@
                                                 <li itemprop="name" class="layout-{level3.data.layout} {f:if(condition:level3.active, then:'active')}{f:if(condition:level3.current, then:'current')}">
                                                     <a aria-label="Lese mehr über {level3.title}"
                                                        itemprop="url"
+                                                       {f:if(condition:'{level3.data.target}',then:'target="{level3.data.target}" rel="noopener"')}
                                                        title="{level3.title}"
                                                        href="{level3.link}">
                                                         {level3.title}
@@ -57,7 +60,7 @@
                        aria-label="Lese mehr über {menuPage.title}"
                        itemprop="url"
                        href="{menuPage.link}"
-                       {f:if(condition:'{menuPage.target}',then:'target="{menuPage.target}" rel="noopener"')}
+                       {f:if(condition:'{menuPage.data.target}',then:'target="{menuPage.data.target}" rel="noopener"')}
                     class="nav-link"
                     aria-haspopup="false"
                     aria-expanded="false">

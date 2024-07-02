@@ -8,3 +8,63 @@ plugin.tx_powermail {
         }
     }
 }
+plugin.tx_powermail.settings.setup.sender.default.senderEmail.value = info@muenker.com
+plugin.tx_powermail.settings.setup.sender.default.senderName.value = Münker Metallprofile GmbH
+plugin.tx_powermail.settings.setup.receiver.default.senderEmail.value = info@muenker.com
+plugin.tx_powermail.settings.setup.receiver.default.senderName.value = Münker Metallprofile GmbH
+plugin.tx_powermail.settings.setup {
+    spamshield.senderEmail = info@muenker.com
+    receiver {
+        attachment = 0
+        overwrite {
+            senderName = TEXT
+            senderName.value = Münker Metallprofile GmbH
+            senderEmail = TEXT
+            senderEmail.value = info@muenker.com
+        }
+
+    }
+    sender {
+        overwrite {
+            senderName = TEXT
+            senderName.value = Münker Metallprofile GmbH
+            senderEmail = TEXT
+            senderEmail.value = info@muenker.com
+        }
+    }
+}
+
+
+lib.powermailAttachmentLink = TEXT
+lib.powermailAttachmentLink {
+    current = 1
+    noTrimWrap = |Anzeigen von ||
+    stdWrap.replacement {
+        10 {
+            search = "
+            replace.char =
+        }
+    }
+    replacement {
+        10 {
+            search = [
+            replace.char =
+        }
+        20 {
+            search = ]
+            replace =
+        }
+        30 {
+            search = &quot;
+            replace =
+        }
+    }
+    stdWrap.typolink {
+
+        parameter {
+            current = 1
+            wrap = /uploads/tx_powermail/|
+        }
+        forceAbsoluteUrl = 1
+    }
+}
