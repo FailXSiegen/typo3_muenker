@@ -47,8 +47,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => "$table",
-                'foreign_table_where' => "AND $table.pid=###CURRENT_PID### AND $table.sys_language_uid IN (-1,0)",
+                'foreign_table' => 'tx_riglossar_domain_model_glossar',
+                'foreign_table_where' => 'AND tx_riglossar_domain_model_glossar.pid=###CURRENT_PID### AND tx_riglossar_domain_model_glossar.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [

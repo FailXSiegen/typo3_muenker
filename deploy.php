@@ -33,6 +33,7 @@ set('rsync',[
         'docker-compose.yml',
         'public/fileadmin',
         'public/uploads',
+        'shared',
         'README.md',
         'deploy_rsa',
         'deploy_rsa.enc',
@@ -65,9 +66,10 @@ task('typo3', function () {
 //    run('cd {{yarn_path}} && yarn install --silent --non-interactive');
 //})->local();
 
-// task('opcache', function () {
-//     run('cd {{release_path}} && {{bin_folder}}cachetool opcache:reset');
-// });
+task('deploy:opcache_reset', function () {
+    run('{{bin/php}} -r "opcache_reset();"');
+ });
+ 
 
 task('deploy', [
     'deploy:unlock',
@@ -80,7 +82,7 @@ task('deploy', [
     'deploy:shared',
     'typo3',
     'deploy:symlink',
-    // 'opcache',
+    // 'deploy:opcache_reset',
     'deploy:unlock',
     'cleanup',
     'success'

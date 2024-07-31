@@ -90,17 +90,23 @@ select::-ms-expand { /* for IE 11 */
   display:inline;
 }
 main {
-    ul {
-        padding:0;
-        margin:0;
-        li {
-            margin:0 0 10px 17px;
-            list-style: square outside;
-            ul {
-                margin-left:15px;
-            }
+  ul {
+    padding:0;
+    margin:0;
+    li {
+        margin:0 0 10px 17px;
+        list-style: square outside;
+        ul {
+            margin-left:15px;
         }
     }
+    &.pagination {
+      li {
+        margin: 0;
+        list-style: none;
+      }
+    }
+  }
 }
 footer {
     padding:15px 0;

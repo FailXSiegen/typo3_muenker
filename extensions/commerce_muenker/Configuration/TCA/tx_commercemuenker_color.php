@@ -22,7 +22,7 @@ return array(
 		'searchFields' => 'title,subtitle,article_number,teaser,description,plan_images,images,files,contents,attributes,prices,variants,categories,file_collections,accessories,',
      
     ),
-	'feInterface' => $TCA['tx_commercemuenker_color']['feInterface'],
+	// 'feInterface' => $GLOBALS['TCA']['tx_commercemuenker_color']['feInterface'],
 	'columns' => array(
 		'sys_language_uid' => array(		
 			'exclude' => 1,

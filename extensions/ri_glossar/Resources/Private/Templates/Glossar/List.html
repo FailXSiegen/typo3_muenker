@@ -3,9 +3,16 @@
 
 <f:layout name="Default" />
 <f:section name="Main">
-    <f:for each="{glossars}" as="letter" key="key">
-        <f:link.page section="{key}">{key}</f:link.page>
-    </f:for>
+    <nav aria-label="Sprungmarken zu Buchstaben">
+        <ul class="pagination list-unstyled">
+        <f:for each="{glossars}" as="letter" key="key">
+            <li class="page-item">
+                <f:link.page section="{key}" class="page-link">{key}</f:link.page>
+            </li>
+        </f:for>
+        </ul>
+    </nav>
+   
 
     <f:for each="{glossars}" as="letter" key="key">
         <h2 id="{key}">{key}</h2>

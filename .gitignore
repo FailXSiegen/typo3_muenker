@@ -110,3 +110,4 @@ import_db_ddev.sh
 !/robots.txt
 !/robots_protected.txt
 !after_deploy.sh
+/shared/

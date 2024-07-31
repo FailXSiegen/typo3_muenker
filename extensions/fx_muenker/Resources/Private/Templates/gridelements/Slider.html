@@ -6,16 +6,7 @@
     <f:if condition="{children}">
         <f:asset.script identifier="flexslider-js" src="EXT:fx_muenker/Resources/Public/Vendor/flexslider/jquery.flexslider-min.js" />
         <f:asset.css identifier="flexslider-css" href="EXT:fx_muenker/Resources/Public/Vendor/flexslider/flexslider.css" />
-        <f:asset.script identifier="flexslider-js-init">
-            $('.flexslider').flexslider({
-                slideshowSpeed: 5000,
-                animationSpeed: 500,
-                useCSS: false,
-                controlNav: true,
-                directionNav: false,
-                pauseOnHover: false
-            })
-        </f:asset.script>
+        <f:asset.script identifier="flexslider-js-init" src="EXT:fx_muenker/Resources/Public/JavaScript/flexslider-init.js" />
         <div class="flexslider" id="flexslider{f:if(condition:data._LOCALIZED_UID, then:data._LOCALIZED_UID, else:data.uid)}">
             <ul class="slides">
                 <f:for each="{children}" as="columns" key="rowNumber">

@@ -126,6 +126,10 @@ main ul li {
   margin: 0 0 10px 17px;
   list-style: square outside;
 }
+main ul.pagination li {
+  margin: 0;
+  list-style: none;
+}
 main ul li ul {
   margin-left: 15px;
 }
