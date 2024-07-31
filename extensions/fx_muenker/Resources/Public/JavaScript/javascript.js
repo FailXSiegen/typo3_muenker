@@ -1,3 +1,38 @@
+// Fügen Sie diese Funktion am Ende Ihres bestehenden JavaScript-Codes hinzu
+function initAnchorNavigation() {
+  const header = document.querySelector('header.header');
+  const headerHeight = header.offsetHeight;
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').slice(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight; // 20px extra Abstand
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        // Fügen Sie die Klasse 'small' zum Header hinzu, wenn wir scrollen
+        header.classList.add('small');
+      }
+    });
+  });
+
+  // Fügen Sie Padding zu den Ziel-Elementen hinzu
+  document.querySelectorAll('h2[id]').forEach(heading => {
+    heading.style.scrollMarginTop = `${headerHeight + 20}px`; // 20px extra Abstand
+  });
+}
+
+// Führen Sie die Funktion aus, wenn das DOM geladen ist
+document.addEventListener('DOMContentLoaded', initAnchorNavigation);
 document.addEventListener('wheel', (evt) => {
   window_top = $(window).scrollTop()
   subnavscrollTop = window_top + 150
