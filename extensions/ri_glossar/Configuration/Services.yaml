@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Riconet\RiGlossar\:
+    resource: '../Classes/*'
+
+  Riconet\RiGlossar\Controller\GlossarController:
+    tags: ['controller.service_controller']

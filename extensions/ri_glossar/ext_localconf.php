@@ -1,17 +1,16 @@
 <?php
-if (!defined('TYPO3')) {
-	die ('Access denied.');
-}
+defined('TYPO3') or die('Access denied.');
 
+use Riconet\RiGlossar\Controller\GlossarController;
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'RiGlossar',
-	'Glossar',
-	array(
-		\Riconet\RiGlossar\Controller\GlossarController::class => 'show, list',
-	),
-	// non-cacheable actions
-	array(
-		\Riconet\RiGlossar\Controller\GlossarController::class => '',
-	)
+    'RiGlossar',
+    'Glossar',
+    [
+        GlossarController::class => 'show,list',
+    ],
+    // non-cacheable actions
+    [
+        GlossarController::class => '',
+    ]
 );

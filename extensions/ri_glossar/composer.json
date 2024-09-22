@@ -8,9 +8,14 @@
       }
     },
     "require": {
-      "typo3/cms-core": "^10.4 || ^11.5"
+      "typo3/cms-core": "^10.4 || ^11.5 || ^12.4"
     },
     "replace": {
       "ri_glossar": "*"
+    },
+    "extra": {
+      "typo3/cms": {
+        "extension-key": "ri_glossar"
+      }
     }
   }

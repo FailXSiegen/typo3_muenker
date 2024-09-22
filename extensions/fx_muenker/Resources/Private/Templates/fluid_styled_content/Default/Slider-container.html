@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-bs-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <f:asset.script identifier="flexslider-js" src="EXT:fx_muenker/Resources/Public/Vendor/flexslider/jquery.flexslider-min.js" />
+    <f:asset.css identifier="flexslider-css" href="EXT:fx_muenker/Resources/Public/Vendor/flexslider/flexslider.css" />
+    <f:asset.script identifier="flexslider-js-init" src="EXT:fx_muenker/Resources/Public/JavaScript/flexslider-init.js" />
+    <div class="flexslider" id="flexslider{f:if(condition:data._LOCALIZED_UID, then:data._LOCALIZED_UID, else:data.uid)}">
+        <ul class="slides">
+            <f:for each="{children_201}" as="child" key="rowNumber">
+                <li>
+                    <f:render partial="Child" arguments="{data: child, children: child.children, options: options, settings: settings}"/>
+                </li>
+            </f:for>
+        </ul>
+    </div>   
+</f:section>
+
+</html>

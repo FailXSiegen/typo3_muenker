@@ -1,0 +1,42 @@
+tt_content  {
+    2col-container =< lib.contentElement
+    2col-container {
+        templateName = 2col-container
+        dataProcessing {
+            13 = B13\Container\DataProcessing\ContainerProcessor
+            101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+    }
+    3col-container =< lib.contentElement
+    3col-container {
+        templateName = 3col-container
+        dataProcessing {
+            13 = B13\Container\DataProcessing\ContainerProcessor
+            101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+    }
+    4col-container =< lib.contentElement
+    4col-container {
+        templateName = 4col-container
+        dataProcessing {
+            13 = B13\Container\DataProcessing\ContainerProcessor
+            101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+    }
+    slider-container =< lib.contentElement
+    slider-container {
+        templateName = slider-container
+        dataProcessing {
+            13 = B13\Container\DataProcessing\ContainerProcessor
+            101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+    }
+    accordion-container =< lib.contentElement
+    accordion-container {
+        templateName = accordion-container
+        dataProcessing {
+            13 = B13\Container\DataProcessing\ContainerProcessor
+            101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+    }
+}

@@ -1,10 +1,10 @@
-// Fügen Sie diese Funktion am Ende Ihres bestehenden JavaScript-Codes hinzu
 function initAnchorNavigation() {
   const header = document.querySelector('header.header');
   const headerHeight = header.offsetHeight;
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]:not([data-fancybox]):not(.fancybox):not(.lightbox)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      console.log('click');
       e.preventDefault();
 
       const targetId = this.getAttribute('href').slice(1);
@@ -12,26 +12,23 @@ function initAnchorNavigation() {
 
       if (targetElement) {
         const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerHeight; // 20px extra Abstand
+        const offsetPosition = elementPosition - headerHeight;
 
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
 
-        // Fügen Sie die Klasse 'small' zum Header hinzu, wenn wir scrollen
         header.classList.add('small');
       }
     });
   });
 
-  // Fügen Sie Padding zu den Ziel-Elementen hinzu
   document.querySelectorAll('h2[id]').forEach(heading => {
-    heading.style.scrollMarginTop = `${headerHeight + 20}px`; // 20px extra Abstand
+    heading.style.scrollMarginTop = `${headerHeight + 20}px`; 
   });
 }
 
-// Führen Sie die Funktion aus, wenn das DOM geladen ist
 document.addEventListener('DOMContentLoaded', initAnchorNavigation);
 document.addEventListener('wheel', (evt) => {
   window_top = $(window).scrollTop()
@@ -72,7 +69,7 @@ $(function () {
     })
   }
   }
-  if ($('.produktbox').length > 0) {
+  if ($('.anfrage-container').length > 0) {
     $('#powermail_field_farbauswahl').attr('value', 'Farbe:' + $('#article_id_0').html())
     $('.powermail_fieldwrap_ihrefarbauswahl').html('<span class="color-box" style="' + $('#article_id_0').attr('style') + '"></span> Farbe:' + $('#article_id_0').html())
     $('.colors li').click(function () {
@@ -85,7 +82,6 @@ $(function () {
     $('.colors li').click(function () {
       addThicknessToForm($(this));
     })
-
     $('.fancybox').fancybox({
       helpers: {
         overlay: {
@@ -111,18 +107,12 @@ $(function () {
   })
   if (gaanonym.switcher.isActive() && typeof ga !== 'undefined') {
     $('.fancybox').click(function () {
-      //Bilder
-      // _gaq.push(['_trackEvent', 'Bild',window.location.pathname,$(this).attr('title')]);
       ga('send', 'event', 'Bild', window.location.pathname, $(this).attr('title'))
     })
     $('.fancybox-thumb').click(function () {
-      //Bilder
-      // _gaq.push(['_trackEvent', 'Bild',window.location.pathname,$(this).attr('title')]);
       ga('send', 'event', 'Bild', window.location.pathname, $(this).attr('title'))
     })
     $('.anfrageform').submit(function () {
-      //Formulare
-      // _gaq.push(['_trackEvent', 'Anfrage',window.location.pathname,$(this).find('input[type=hidden]').val()]);
       ga('send', 'event', 'Anfrage', window.location.pathname, $(this).find('input[type=hidden]').val())
     })
     $('.artikellisting a').click(function () {
@@ -131,7 +121,6 @@ $(function () {
         //Download
         var artikel = $('.artikellisting h3').html() + ' ' + $(this).html()
         artikel = artikel.replace('<br>', ' ')
-        // _gaq.push(['_trackEvent', 'Download',window.location.pathname,artikel]);
         ga('send', 'event', 'Download', window.location.pathname, artikel)
       }
     })
@@ -140,14 +129,11 @@ $(function () {
       var linkparent = $(this).parent('h3').length
       var linkchildImg = $(this).has('img').length
       if (linkchildImg > 0) {
-        //	_gaq.push(['_trackEvent', 'Startseite Link Klick','Bild',targetpage]);
         ga('send', 'event', 'Startseite Link Klick', 'Bild', targetpage)
       } else {
         if (linkparent > 0) {
-          //		_gaq.push(['_trackEvent', 'Startseite Link Klick','Überschrift',targetpage]);
           ga('send', 'event', 'Startseite Link Klick', 'Überschrift', targetpage)
         } else {
-          //		_gaq.push(['_trackEvent', 'Startseite Link Klick','Text',targetpage]);
           ga('send', 'event', 'Startseite Link Klick', 'Text', targetpage)
         }
       }
