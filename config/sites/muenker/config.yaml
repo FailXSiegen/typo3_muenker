@@ -103,3 +103,10 @@ routes:
     type: uri
     source: 't3://page?uid=579&type=1533906435'
 websiteTitle: ''
+securityHeaders:
+  default:
+    Permissions-Policy: "geolocation=(), microphone=(), camera=()"
+    Referrer-Policy: "origin-when-cross-origin"
+    Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options: "nosniff"
+    X-Frame-Options: "SAMEORIGIN"

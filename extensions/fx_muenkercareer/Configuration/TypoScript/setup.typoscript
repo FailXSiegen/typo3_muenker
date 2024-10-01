@@ -71,7 +71,7 @@ page {
 
   }
   includeJSLibs {
-    jquery = EXT:fx_muenker/Resources/Public/Vendor/jquery/dist/jquery.min.js
+    jquery >
     popper = EXT:fx_muenker/Resources/Public/Vendor/@popperjs/core/dist/umd/popper.js
     bootstrap = EXT:fx_muenker/Resources/Public/Vendor/bootstrap/dist/js/bootstrap.min.js
     tether >

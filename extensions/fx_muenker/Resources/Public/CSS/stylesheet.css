@@ -1,4 +1,3 @@
-
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #082b53;
@@ -126,12 +125,12 @@ main ul li {
   margin: 0 0 10px 17px;
   list-style: square outside;
 }
+main ul li ul {
+  margin-left: 15px;
+}
 main ul.pagination li {
   margin: 0;
   list-style: none;
-}
-main ul li ul {
-  margin-left: 15px;
 }
 footer {
   padding: 15px 0;
@@ -203,7 +202,7 @@ footer ul li {
     display: none;
   }
 }
-.container > .flexslider {
+.container > .swiper {
   margin: 0;
   border: 0;
   -webkit-border-radius: 0;
@@ -1446,11 +1445,11 @@ ul.reference li {
     margin: 0 0 10px 0;
   }
 }
-.flexslider > .flex-control-nav {
+.swiper > .swiper-pagination {
   bottom: 15px;
   z-index: 99;
 }
-.flexslider > .flex-control-paging li a {
+.swiper > .swiper-pagination > span {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1462,7 +1461,7 @@ ul.reference li {
   overflow: hidden;
   border: 1px solid #fff;
 }
-.flexslider > .flex-control-paging li a.flex-active {
+.swiper > .swiper-pagination > span.swiper-pagination-bullet-active {
   background: #DC9A29;
 }
 @media (max-width: 768px) {
@@ -1855,4 +1854,3 @@ ul.reference li {
 .accordion-header {
   margin-top: 0;
 }
-/*# sourceMappingURL=stylesheet.css.map */

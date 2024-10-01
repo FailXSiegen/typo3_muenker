@@ -33,13 +33,19 @@
     </f:if>
 </f:if>
 <f:section name="thumb-wild">
-    <f:asset.script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" identifier="masonry" />
-    <f:asset.script identifier="masonry-{data.uid}" src="EXT:fx_muenker/Resources/Public/JavaScript/masonry-init.js" />
-    <div class="grid mx-auto {f:if(condition:data.image_gallery, then:'d-none d-md-block')}">
+    <f:asset.script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" identifier="masonry" useNonce="1" />
+    <f:asset.script identifier="masonry-{data.uid}" useNonce="1">
+        var grid = document.querySelector('.grid');
+        var masonry = new Masonry(grid, {
+          itemSelector: '.grid-item',
+          gutter: 15
+        });
+    </f:asset.script>
+    <div class="grid px-3 pt-3 mx-auto {f:if(condition:data.image_gallery, then:'d-none d-md-block')}">
         <f:for each="{files}" as="image">
             <div class="grid-item">
                 <div class="grid-item-content">
-                    <f:render partial="Media/Type" arguments="{file: image, data: data, settings: settings}" />
+                    <f:render partial="Media/Type" arguments="{file: image, dimensions: gallery.rows.1.columns.1.dimensions, data: data, settings: settings}" />
                 </div>
             </div>
         </f:for>

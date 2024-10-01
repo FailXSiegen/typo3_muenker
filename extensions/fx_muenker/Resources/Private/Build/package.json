@@ -2,10 +2,10 @@
   "dependencies": {
     "bootstrap": "^5.3",
     "@popperjs/core": "^2",
-    "flexslider": "^2.7.2",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5",
-    "tether": "^1.4.5"
+    "tether": "^1.4.5",
+    "swiper": "^8.4.5",
+    "glightbox": "^3.2.0"
   },
   "scripts": {
     "build": "yarn install --production=true && webpack --config webpack.config.js",

@@ -16,7 +16,8 @@ Render Powermail Form
         <f:then>
 			<f:if condition="{settings.misc.ajaxSubmit}">
 				<f:asset.script 
-					identifier="powermailAjaxCustomSubmit" 
+					identifier="powermailAjaxCustomSubmit"
+                    useNonce="1" 
 					src="EXT:fx_muenker/Resources/Public/JavaScript/form.ajax-submit.js" />
 			</f:if>
             <div class="container-fluid">

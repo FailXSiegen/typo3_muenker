@@ -34,11 +34,20 @@ use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class TextColorViewHelper
- * @package Failx\FxMuenker\ViewHelpers
+ * @noinspection PhpUnused
  */
 class TextColorViewHelper extends AbstractTagBasedViewHelper
 {
+    /**
+     * @var bool
+     */
+    protected $escapeOutput = false;
+
+    /**
+     * @var bool
+     */
+    protected $cacheable = false;
+
     public function initializeArguments() : void
     {
         parent::initializeArguments();

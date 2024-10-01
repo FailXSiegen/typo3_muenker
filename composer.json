@@ -23,11 +23,10 @@
 		}
 	},
 	"require": {
+		"b13/container": "^2.3",
 		"failx/commerce-muenker": "*",
 		"failx/fx-muenker": "*",
 		"failx/fx-muenkercareer": "*",
-		"riconet/ri-glossar": "*",
-		"b13/container": "^2.3",
 		"fluidtypo3/vhs": "^7.0",
 		"georgringer/news": "^11.0",
 		"helhum/dotenv-connector": "^3",
@@ -38,6 +37,7 @@
 		"lochmueller/staticfilecache": "^14",
 		"plan2net/webp": "^5",
 		"reelworx/rx-shariff": "^15.0",
+		"riconet/ri-glossar": "*",
 		"t3/dce": "^3",
 		"t3/min": "^3",
 		"tpwd/ke_search": "^5",
@@ -86,7 +86,7 @@
 		]
 	},
 	"require-dev": {
-		"deployer/deployer": "^7",
+		"deployer/deployer": "^7.4",
 		"jigal/t3adminer": "^12",
 		"rector/rector": "*",
 		"ssch/typo3-rector": "^1"

@@ -1,10 +1,10 @@
+// Anchor Navigation
 function initAnchorNavigation() {
   const header = document.querySelector('header.header');
   const headerHeight = header.offsetHeight;
 
   document.querySelectorAll('a[href^="#"]:not([data-fancybox]):not(.fancybox):not(.lightbox)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      console.log('click');
       e.preventDefault();
 
       const targetId = this.getAttribute('href').slice(1);
@@ -30,133 +30,139 @@ function initAnchorNavigation() {
 }
 
 document.addEventListener('DOMContentLoaded', initAnchorNavigation);
+
+// Header Scroll Effect
 document.addEventListener('wheel', (evt) => {
-  window_top = $(window).scrollTop()
-  subnavscrollTop = window_top + 150
-  if (window_top > 0) {
-    $('header.header').addClass('small')
+  const windowTop = window.pageYOffset;
+  const subnavScrollTop = windowTop + 150;
+  const header = document.querySelector('header.header');
+
+  if (windowTop > 0) {
+    header.classList.add('small');
   } else {
-    $('header.header').removeClass('small')
+    header.classList.remove('small');
   }
 }, {
   capture: true,
   passive: true
-})
-$(function () {
-  function addThicknessToForm(element) {
-    $('#powermail_field_dicke')
-    .find('option')
-    .remove()
-    .end()
-  if($(element).data('thickness')) {
-    let strengthlist = element.data('thickness').split('|')
-    $.each(strengthlist, function (key, value) {
-      $('#powermail_field_dicke')
-        .append($('<option>', {value: value})
-          .text(value))
-    })
+});
+
+// Form Handling
+function addThicknessToForm(element) {
+  const thicknessSelect = document.getElementById('powermail_field_dicke');
+  thicknessSelect.innerHTML = '';
+
+  if(element.dataset.thickness) {
+    const strengthList = element.dataset.thickness.split('|');
+    strengthList.forEach(value => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = value;
+      thicknessSelect.appendChild(option);
+    });
   } else {
-    let strengthlist = []
-    $('.produktbox li:contains("mm")').each(function () {
-      if (element.html().endsWith('mm') && element.html().length < 9) {
-        strengthlist.push(element.html())
-      }
-    })
-    $.each(strengthlist, function (key, value) {
-      $('#powermail_field_dicke')
-        .append($('<option>', {value: value})
-          .text(value))
-    })
-  }
-  }
-  if ($('.anfrage-container').length > 0) {
-    $('#powermail_field_farbauswahl').attr('value', 'Farbe:' + $('#article_id_0').html())
-    $('.powermail_fieldwrap_ihrefarbauswahl').html('<span class="color-box" style="' + $('#article_id_0').attr('style') + '"></span> Farbe:' + $('#article_id_0').html())
-    $('.colors li').click(function () {
-      let styling = $(this).attr('style')
-      $('#powermail_field_farbauswahl').attr('value', 'Farbe:' + $(this).html())
-      $('.powermail_fieldwrap_ihrefarbauswahl').html('<span class="color-box" style="' + $(this).attr('style') + '"></span>  Farbe:' + $(this).html())
-    })
+    const strengthList = Array.from(document.querySelectorAll('.produktbox li'))
+      .filter(li => li.textContent.endsWith('mm') && li.textContent.length < 9)
+      .map(li => li.textContent);
 
-    addThicknessToForm($('.colors li:first-child'));
-    $('.colors li').click(function () {
-      addThicknessToForm($(this));
-    })
-    $('.fancybox').fancybox({
-      helpers: {
-        overlay: {
-          locked: false
-        }
-      }
-    })
+    strengthList.forEach(value => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = value;
+      thicknessSelect.appendChild(option);
+    });
   }
-  $('.button_back').click(function () {
-    parent.history.back()
-    return false
-  })
-  $('#inputText').attr('placeholder', 'Suche')
+}
 
-  $('.print').click(function () {
-    window.print()
-    return false
-  })
-  $('.routenplaner').append('<form action="https://maps.google.com/maps" method="get" target="_blank"> <label>Startadresse (mit Ort)</label><input class="inputbox" type="text" name="saddr" value="" /><input type="hidden" name="daddr" value="Gewerbeparkstraße 19, 51580 Reichshof-Wehnrath" /><button type="submit">Karte aufrufen</button></form>')
-  $('.withsub').click(function () {
-    $(this).toggleClass('fa-caret-down').toggleClass('fa-caret-up').toggleClass('active')
-    $(this).next().toggleClass('open')
-  })
-  if (gaanonym.switcher.isActive() && typeof ga !== 'undefined') {
-    $('.fancybox').click(function () {
-      ga('send', 'event', 'Bild', window.location.pathname, $(this).attr('title'))
-    })
-    $('.fancybox-thumb').click(function () {
-      ga('send', 'event', 'Bild', window.location.pathname, $(this).attr('title'))
-    })
-    $('.anfrageform').submit(function () {
-      ga('send', 'event', 'Anfrage', window.location.pathname, $(this).find('input[type=hidden]').val())
-    })
-    $('.artikellisting a').click(function () {
-      var target = $(this).attr('href')
-      if (target.match(/\.(pdf|txt|doc|docx|xls|ppt|js|vsd|vxd|css|rar|zip|tar|gz|dmg|exe|wma|mov|avi|wmv|mp3|mp4|vcf)$/)) {
-        //Download
-        var artikel = $('.artikellisting h3').html() + ' ' + $(this).html()
-        artikel = artikel.replace('<br>', ' ')
-        ga('send', 'event', 'Download', window.location.pathname, artikel)
-      }
-    })
-    $('#muenker-6 #mainContent a').click(function (e) {
-      var targetpage = $(this).attr('href')
-      var linkparent = $(this).parent('h3').length
-      var linkchildImg = $(this).has('img').length
-      if (linkchildImg > 0) {
-        ga('send', 'event', 'Startseite Link Klick', 'Bild', targetpage)
-      } else {
-        if (linkparent > 0) {
-          ga('send', 'event', 'Startseite Link Klick', 'Überschrift', targetpage)
-        } else {
-          ga('send', 'event', 'Startseite Link Klick', 'Text', targetpage)
-        }
-      }
-    })
+document.addEventListener('DOMContentLoaded', () => {
+  const anfrageContainer = document.querySelector('.anfrage-container');
+  if (anfrageContainer) {
+    const farbauswahlInput = document.getElementById('powermail_field_farbauswahl');
+    const farbauswahlWrapper = document.querySelector('.powermail_fieldwrap_ihrefarbauswahl');
+    const firstColorElement = document.querySelector('#article_id_0');
+
+    if (firstColorElement) {
+      farbauswahlInput.value = 'Farbe:' + firstColorElement.textContent;
+      farbauswahlWrapper.innerHTML = `<span class="color-box" style="${firstColorElement.getAttribute('style')}"></span> Farbe:${firstColorElement.textContent}`;
+    }
+
+    document.querySelectorAll('.colors li').forEach(colorElement => {
+      colorElement.addEventListener('click', function() {
+        const styling = this.getAttribute('style');
+        farbauswahlInput.value = 'Farbe:' + this.textContent;
+        farbauswahlWrapper.innerHTML = `<span class="color-box" style="${styling}"></span> Farbe:${this.textContent}`;
+        addThicknessToForm(this);
+      });
+    });
+
+    const firstColorLi = document.querySelector('.colors li:first-child');
+    if (firstColorLi) {
+      addThicknessToForm(firstColorLi);
+    }
+
+    // Fancybox initialization (you might need to replace this with a vanilla JS lightbox solution)
+    // Fancybox.bind("[data-fancybox]", {
+    //   // ... options ...
+    // });
   }
-  $('.tx_powermail_pi1_formconfirmation_submit').submit(function () {
-    $('.tx-powermail-pi1_confirmation_submit').attr('disabled', 'disabled')
-    $('.tx-powermail-pi1_confirmation_submit').css('background-color', 'green')
-    $('.tx-powermail-pi1_confirmation_submit').css('box-shadow', 'inset 0px -3px 7px 1px darkGreen')
-    $('.tx-powermail-pi1_confirmation_submit').css('-webkit-box-shadow', 'inset 0px -3px 7px 1px darkGreen')
-    $('.tx-powermail-pi1_confirmation_submit').css('--moz-box-shadow', 'inset 0px -3px 7px 1px darkGreen')
-    $('.tx-powermail-pi1_confirmation_submit').css('cursor', 'pointer')
-    $('.tx-powermail-pi1_confirmation_submit').val('Wird bearbeitet')
-  })
 
-  $('#productSlider').show(0)
-  $('#productSlider').jcarousel({
-    wrap: 'circular',
-    scroll: 5,
-    auto: 15,
-    animation: 2000
-  })
-})
+  // Back button
+  document.querySelector('.button_back')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.history.back();
+  });
+
+  // Search input placeholder
+  document.getElementById('inputText')?.setAttribute('placeholder', 'Suche');
+
+  // Print button
+  document.querySelector('.print')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.print();
+  });
+
+  // Route planner
+  const routenplaner = document.querySelector('.routenplaner');
+  if (routenplaner) {
+    routenplaner.innerHTML = `
+      <form action="https://maps.google.com/maps" method="get" target="_blank">
+        <label>Startadresse (mit Ort)</label>
+        <input class="inputbox" type="text" name="saddr" value="" />
+        <input type="hidden" name="daddr" value="Gewerbeparkstraße 19, 51580 Reichshof-Wehnrath" />
+        <button type="submit">Karte aufrufen</button>
+      </form>
+    `;
+  }
+
+  // Submenu toggle
+  document.querySelectorAll('.withsub').forEach(element => {
+    element.addEventListener('click', function() {
+      this.classList.toggle('fa-caret-down');
+      this.classList.toggle('fa-caret-up');
+      this.classList.toggle('active');
+      this.nextElementSibling.classList.toggle('open');
+    });
+  });
+
+  // Form submission
+  document.querySelector('.tx_powermail_pi1_formconfirmation_submit')?.addEventListener('submit', function(e) {
+    const submitButton = this.querySelector('.tx-powermail-pi1_confirmation_submit');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.style.backgroundColor = 'green';
+      submitButton.style.boxShadow = 'inset 0px -3px 7px 1px darkGreen';
+      submitButton.style.cursor = 'pointer';
+      submitButton.value = 'Wird bearbeitet';
+    }
+  });
+
+  // Product slider (you might need to replace this with a vanilla JS carousel solution)
+  // const productSlider = document.getElementById('productSlider');
+  // if (productSlider) {
+  //   productSlider.style.display = 'block';
+  //   // Initialize your new carousel here
+  // }
+});
 
 function gaanon () {
   var obj = this

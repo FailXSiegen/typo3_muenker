@@ -111,3 +111,7 @@ import_db_ddev.sh
 !/robots_protected.txt
 !after_deploy.sh
 /shared/
+/releases/
+Vendor/
+extensions/fx_muenkercareer/Resources/Public/Vendor/
+extensions/fx_muenker/Resources/Public/Vendor/*

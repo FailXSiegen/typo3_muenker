@@ -184,7 +184,7 @@ footer {
            
        }
 }
-.container > .flexslider {
+.container > .swiper {
     margin:0;
     border:0;
     .border-radius(0);
@@ -844,17 +844,17 @@ ul.reference {
     }
 }
 
-.flexslider > .flex-control-nav {
+.swiper > .swiper-pagination {
     bottom:15px;
     z-index: 99;
 }
-.flexslider > .flex-control-paging li a {
+.swiper > .swiper-pagination > span{
     .border-radius(0);
     background:@white;
     text-indent:9999px;
     overflow:hidden;
     border:1px solid @white;
-    &.flex-active {
+    &.swiper-pagination-bullet-active {
         background:@orange;
     }
 }

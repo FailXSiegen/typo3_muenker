@@ -3,17 +3,19 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
-    <f:asset.script identifier="flexslider-js" src="EXT:fx_muenker/Resources/Public/Vendor/flexslider/jquery.flexslider-min.js" />
-    <f:asset.css identifier="flexslider-css" href="EXT:fx_muenker/Resources/Public/Vendor/flexslider/flexslider.css" />
-    <f:asset.script identifier="flexslider-js-init" src="EXT:fx_muenker/Resources/Public/JavaScript/flexslider-init.js" />
-    <div class="flexslider" id="flexslider{f:if(condition:data._LOCALIZED_UID, then:data._LOCALIZED_UID, else:data.uid)}">
-        <ul class="slides">
+
+    <f:asset.script identifier="swiper-js" src="EXT:fx_muenker/Resources/Public/Vendor/swiper/swiper-bundle.min.js" useNonce="1"/>
+    <f:asset.css identifier="swiper-css" href="EXT:fx_muenker/Resources/Public/Vendor/swiper/swiper-bundle.min.css" useNonce="1" />
+    <f:asset.script identifier="slider" src="EXT:fx_muenker/Resources/Public/JavaScript/slider.js" useNonce="1" />
+    <div class="swiper" id="swiper{f:if(condition:data._LOCALIZED_UID, then:data._LOCALIZED_UID, else:data.uid)}">
+        <div class="swiper-wrapper">
             <f:for each="{children_201}" as="child" key="rowNumber">
-                <li>
+                <div class="swiper-slide">
                     <f:render partial="Child" arguments="{data: child, children: child.children, options: options, settings: settings}"/>
-                </li>
+                </div>
             </f:for>
-        </ul>
+        </div>
+        <div class="swiper-pagination"></div>
     </div>   
 </f:section>
 
