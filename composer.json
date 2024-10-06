@@ -33,6 +33,7 @@
 		"helhum/typo3-console": "^8",
 		"helhum/typoscript-rendering": "v12.x-dev",
 		"in2code/powermail": "^12",
+		"in2code/powermailrecaptcha": "^5.2",
 		"jweiland/sync-crop-areas": "^3.0",
 		"lochmueller/staticfilecache": "^14",
 		"plan2net/webp": "^5",

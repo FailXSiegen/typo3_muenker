@@ -5,8 +5,10 @@ import 'glightbox/dist/css/glightbox.min.css';
 export function initLightbox() {
   const lightbox = GLightbox({
     selector: '.fancybox',
-    touchNavigation: true,
+    touchNavigation: false,
     height: 'auto',
+    closeOnOutsideClick: false,
+    draggable: false,
     onOpen: () => {
       updateLightboxSize();
       window.addEventListener('resize', updateLightboxSize);

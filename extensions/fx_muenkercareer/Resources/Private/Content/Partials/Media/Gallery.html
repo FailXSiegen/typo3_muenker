@@ -34,13 +34,7 @@
 </f:if>
 <f:section name="thumb-wild">
     <f:asset.script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" identifier="masonry" useNonce="1" />
-    <f:asset.script identifier="masonry-{data.uid}" useNonce="1">
-        var grid = document.querySelector('.grid');
-        var masonry = new Masonry(grid, {
-          itemSelector: '.grid-item',
-          gutter: 15
-        });
-    </f:asset.script>
+    <f:asset.script src="EXT:fx_muenkercareer/Resources/Public/JavaScript/masonry-init.js" identifier="masonry-{data.uid}" useNonce="1" />
     <div class="grid px-3 pt-3 mx-auto {f:if(condition:data.image_gallery, then:'d-none d-md-block')}">
         <f:for each="{files}" as="image">
             <div class="grid-item">

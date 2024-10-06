@@ -8,7 +8,9 @@
     }
   },
   "require": {
-    "typo3/cms-core": "^12.4"
+    "typo3/cms-core": "^12.4",
+    "in2code/powermail": "*",
+    "in2code/powermailrecaptcha": "*"
   },
   "replace": {
     "fx_muenker": "*"

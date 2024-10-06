@@ -34,7 +34,38 @@ plugin.tx_powermail.settings.setup {
     }
 }
 
+plugin.tx_powermail {
+  view {
+    templateRootPaths {
+      99 = {$plugin.tx_powermail.view.templateRootPath}
+    }
 
+    partialRootPaths {
+        10 >
+        99 = {$plugin.tx_powermail.view.partialRootPath}
+    }
+
+    layoutRootPaths {
+      99 = {$plugin.tx_powermail.view.layoutRootPath}
+    }
+  }
+}
+plugin.tx_powermailrecaptcha {
+  view {
+    templateRootPaths {
+      99 = {$plugin.tx_powermail.view.templateRootPath}
+    }
+
+    partialRootPaths {
+        10 >
+        99 = {$plugin.tx_powermail.view.partialRootPath}
+    }
+
+    layoutRootPaths {
+      99 = {$plugin.tx_powermail.view.layoutRootPath}
+    }
+  }
+}
 lib.powermailAttachmentLink = TEXT
 lib.powermailAttachmentLink {
     current = 1
@@ -68,3 +99,10 @@ lib.powermailAttachmentLink {
         forceAbsoluteUrl = 1
     }
 }
+
+[request && traverse(request.getQueryParams(), 'tx_powermail_pi1/action') == 'optinConfirm']
+    plugin.tx_powermail.settings.setup.spamshield {
+        _enable = 0
+        methods.10._enable = 0
+    }
+[end]

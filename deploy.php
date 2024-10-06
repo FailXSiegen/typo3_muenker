@@ -13,20 +13,27 @@ host('prod')
 // Config
 set('bin/php', 'php');
 set('bin/composer', 'composer');
-set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader');
+set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction --optimize-autoloader');
 set('typo3_webroot', 'public');
 set('keep_releases', 5);
 set('strategy', 'rsync');
 
 add('shared_files', [
     '.env',
-    'public/.htaccess'
+    '{{typo3_webroot}}/.htaccess'
 
 ]);
-add('shared_folders', [
-    'public/fileadmin',
-    'public/uploads',
-    'public/_assets'
+add('writable_dirs', [
+    '{{typo3_webroot}}/fileadmin',
+    '{{typo3_webroot}}/typo3temp',
+    '{{typo3_webroot}}/typo3conf',
+    '{{typo3_webroot}}/uploads'
+]);
+
+add('shared_dirs', [
+    '{{typo3_webroot}}/fileadmin',
+    '{{typo3_webroot}}/uploads',
+    '{{typo3_webroot}}/typo3temp'
 ]);
 task('deploy:update_code', static function () {
 });
@@ -49,6 +56,7 @@ set('rsync', [
         'public/fileadmin',
         'public/uploads',
         'public/_assets',
+        'public/typo3temp',
         'shared',
         'README.md',
         'deploy_rsa',

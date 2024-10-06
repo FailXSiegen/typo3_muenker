@@ -21,8 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 function initLightbox() {
   var lightbox = glightbox__WEBPACK_IMPORTED_MODULE_0___default()({
     selector: '.fancybox',
-    touchNavigation: true,
+    touchNavigation: false,
     height: 'auto',
+    closeOnOutsideClick: false,
+    draggable: false,
     onOpen: function onOpen() {
       updateLightboxSize();
       window.addEventListener('resize', updateLightboxSize);

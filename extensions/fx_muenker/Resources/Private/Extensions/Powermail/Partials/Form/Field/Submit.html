@@ -1,6 +1,9 @@
 
 <div class="powermail_fieldwrap powermail_fieldwrap_type_submit powermail_fieldwrap_{field.marker} {field.css} {settings.styles.framework.fieldAndLabelWrappingClasses}">
 	<div class="{settings.styles.framework.fieldWrappingClasses} {settings.styles.framework.offsetClasses}">
-		<f:form.submit value="{field.title}" class="powermail_submit btn btn-primary" />
+		<f:form.submit value="{field.title}" class="powermail_submit btn btn-primary" data="{title: '{field.title}'}" />
 	</div>
 </div>
+
+<f:asset.script identifier="powermail_submit" useNonce="1" src="EXT:fx_muenker/Resources/Public/JavaScript/powermail_finish.js" />
+

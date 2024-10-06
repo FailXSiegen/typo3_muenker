@@ -46,9 +46,9 @@ styles.templates.layoutRootPath = EXT:fx_muenker/Resources/Private/Layouts/fluid
 styles.content.textmedia.maxW = 1200
 styles.content.textmedia.linkWrap.lightboxEnabled = 1
 
-plugin.tx_powermail.view.templateRootPath = EXT:fx_muenker/Resources/Private/Templates/powermail/
-plugin.tx_powermail.view.partialRootPath = EXT:fx_muenker/Resources/Private/Partials/powermail/
-plugin.tx_powermail.view.layoutRootPath = EXT:fx_muenker/Resources/Private/Layouts/powermail/
+plugin.tx_powermail.view.templateRootPath = EXT:fx_muenker/Resources/Private/Extensions/Powermail/Templates/
+plugin.tx_powermail.view.partialRootPath = EXT:fx_muenker/Resources/Private/Extensions/Powermail/Partials/
+plugin.tx_powermail.view.layoutRootPath = EXT:fx_muenker/Resources/Private/Extensions/Powermail/Layouts/
 
 styles.content.textmedia.maxWInText = 800
 styles.content.textmedia.linkWrap.lightboxCssClass = lightbox
