@@ -15,6 +15,12 @@ NOTE: See example section after main section
 	<vh:misc.variables mail="{mail}" type="mail" function="receiver">
 		<f:format.html parseFuncTSPath="lib.parseFunc_powermail">{powermail_rte}</f:format.html>
 	</vh:misc.variables>
+	<f:if condition="{anschreiben}">
+        <p>{anschreiben -> f:cObject(typoscriptObjectPath:'lib.powermailAttachmentLink')}</p>
+	</f:if>
+	<f:if condition="{zeugnisse}">
+        <p>{zeugnisse -> f:cObject(typoscriptObjectPath:'lib.powermailAttachmentLink')}</p>
+    </f:if>
 	<f:if condition="{lebenslauf}">
         <p>{lebenslauf -> f:cObject(typoscriptObjectPath:'lib.powermailAttachmentLink')}</p>
     </f:if>
