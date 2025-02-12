@@ -114,5 +114,6 @@ import_db_ddev.sh
 /shared/
 /releases/
 Vendor/
+extensions/fx_muenkercareer/Resources/Public/Fonts/
 extensions/fx_muenkercareer/Resources/Public/Vendor/
 extensions/fx_muenker/Resources/Public/Vendor/*

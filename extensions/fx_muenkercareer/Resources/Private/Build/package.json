@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3",
+    "@fontsource/shantell-sans": "^5.1.1",
     "@popperjs/core": "^2",
+    "bootstrap": "^5.3",
     "flexslider": "^2.7.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5",

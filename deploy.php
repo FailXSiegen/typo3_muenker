@@ -76,7 +76,7 @@ set('rsync', [
 
 // Tasks
 task('build', function () {
-    runLocally('{{bin/composer}} install {{composer_options}}');
+    run('cd {{release_path}} && {{bin/composer}} install {{composer_options}}');
 });
 
 task('typo3', function () {
@@ -92,10 +92,10 @@ task('deploy:opcache_reset', function () {
 
 task('deploy', [
     'deploy:unlock',
-    'build',
     'deploy:release',
     'rsync',
     'deploy:shared',
+    'build',
     'typo3',
     // 'deploy:opcache_reset',
     'deploy:unlock',
