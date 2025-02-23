@@ -12,4 +12,5 @@ CREATE TABLE tt_content (
 #
 CREATE TABLE sys_file_reference (
     image_style varchar(20) DEFAULT '' NOT NULL,
+    image_addons VARCHAR(20) DEFAULT '' NOT NULL,
 );

@@ -29,12 +29,25 @@ call_user_func(
                 ],
                 'exclude' => '1',
                 'label' => 'Bild-Stil'
-            ],   
+            ], 
+            'image_addons' => [
+                'exclude' => 1,
+                'label' => 'Image Addon',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectMultipleSideBySide',
+                    'items' => [
+                        ['X Carb', 'xcarb'],
+                    ],
+                    'default' => ''
+                ]
+            ],
+  
         ]);
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             $table,
             'imageoverlayPalette',
-            '--linebreak--,image_style',
+            '--linebreak--,image_style,--linebreak--,image_addons,--linebreak--',
             'after:alternative'
         );
        
